@@ -1,0 +1,73 @@
+//
+//  GratitudeListView.swift
+//
+//
+//  Created by Roman Indermühle on 18.01.2024.
+//
+
+import SwiftUI
+import SwiftData
+
+struct GratitudeListView: View {
+    @Query(sort: \Gratitude.createdAt, order: .reverse) var sortedGratitudes: [Gratitude]
+    @Query var nonSortedGratitudes: [Gratitude]
+    @Environment(\.modelContext) var context
+    
+    var body: some View {
+        VStack {
+            if sortedGratitudes.isEmpty {
+                ContentUnavailableView {
+                    Label("No recorded gratitude", systemImage: "square.and.pencil")
+                } description: {
+                    Text("You haven't recorded any gratitude yet.")
+                } actions: {
+                    NavigationLink(value: true) {
+                        Text("Add Gratitude")
+                            .padding(5)
+                            .font(.headline)
+                    }
+                    .buttonStyle(.borderedProminent)
+                }
+            } else {
+                List {
+                    ForEach(sortedGratitudes, id: \.self) { gratitude in
+                        NavigationLink(value: gratitude) {
+                            VStack(alignment: .leading) {
+                                Text(gratitude.gratitudeValue1)
+                                Text(gratitude.createdAt, style: .date)
+                            }
+                        }
+                        .swipeActions {
+                            Button(role: .destructive) {
+                                context.delete(gratitude)
+                            } label: {
+                                Image(systemName: "trash")
+                            }
+                            
+                        }
+                    }
+                }
+            }
+        }
+        .navigationTitle("Your Gratitude")
+        .navigationDestination(for: Gratitude.self) { gratitude in
+            GratitudeModifyView(gratitude: .constant(gratitude), gratitudeValue1: gratitude.gratitudeValue1, gratitudeValue2: gratitude.gratitudeValue2, gratitudeValue3: gratitude.gratitudeValue3, recordedInSequence: gratitude.recordedInSequence, isEditing: true)
+            
+        }
+        .navigationDestination(for: Bool.self) { _ in
+            if let previousGartitude = nonSortedGratitudes.last {
+                GratitudeModifyView(gratitude: .constant(nil), gratitudeValue1: "", gratitudeValue2: "", gratitudeValue3: "", recordedInSequence: previousGartitude.recordedInSequence, isEditing: false)
+            } else {
+                GratitudeModifyView(gratitude: .constant(nil), gratitudeValue1: "", gratitudeValue2: "", gratitudeValue3: "", recordedInSequence: 0.0, isEditing: false)
+            }
+        }
+        .toolbar(.hidden, for: .tabBar)
+        .overlay(alignment: .bottom) {
+            NavigationLink(value: true) {
+                PlusButton()
+            }
+            .padding(.bottom)
+        }
+    }
+}
+

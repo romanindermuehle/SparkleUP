@@ -1,0 +1,962 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CB6D38D02BA7706D0098AE0E /* SparkleUPApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6D38CF2BA7706D0098AE0E /* SparkleUPApp.swift */; };
+		CB6D38D22BA7706D0098AE0E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6D38D12BA7706D0098AE0E /* ContentView.swift */; };
+		CB6D38D42BA7706F0098AE0E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB6D38D32BA7706F0098AE0E /* Assets.xcassets */; };
+		CB6D38D82BA7706F0098AE0E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB6D38D72BA7706F0098AE0E /* Preview Assets.xcassets */; };
+		CB6D38E22BA7706F0098AE0E /* SparkleUPTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6D38E12BA7706F0098AE0E /* SparkleUPTests.swift */; };
+		CB6D38EC2BA7706F0098AE0E /* SparkleUPUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6D38EB2BA7706F0098AE0E /* SparkleUPUITests.swift */; };
+		CB6D38EE2BA7706F0098AE0E /* SparkleUPUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6D38ED2BA7706F0098AE0E /* SparkleUPUITestsLaunchTests.swift */; };
+		CB6D39382BA7711F0098AE0E /* AppScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6D38FA2BA7711F0098AE0E /* AppScreen.swift */; };
+		CB6D39392BA7711F0098AE0E /* AppTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6D38FB2BA7711F0098AE0E /* AppTabView.swift */; };
+		CB6D393A2BA7711F0098AE0E /* MoodListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6D38FD2BA7711F0098AE0E /* MoodListView.swift */; };
+		CB6D393B2BA7711F0098AE0E /* MoodModifyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6D38FE2BA7711F0098AE0E /* MoodModifyView.swift */; };
+		CB6D393C2BA7711F0098AE0E /* AccountEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6D39002BA7711F0098AE0E /* AccountEditView.swift */; };
+		CB6D393D2BA7711F0098AE0E /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6D39012BA7711F0098AE0E /* AccountView.swift */; };
+		CB6D393E2BA7711F0098AE0E /* GratitudeListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6D39032BA7711F0098AE0E /* GratitudeListView.swift */; };
+		CB6D393F2BA7711F0098AE0E /* GratitudeModifyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6D39042BA7711F0098AE0E /* GratitudeModifyView.swift */; };
+		CB6D39402BA7711F0098AE0E /* CardData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6D39062BA7711F0098AE0E /* CardData.swift */; };
+		CB6D39412BA7711F0098AE0E /* Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6D39082BA7711F0098AE0E /* Day.swift */; };
+		CB6D39422BA7711F0098AE0E /* Gratitude.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6D39092BA7711F0098AE0E /* Gratitude.swift */; };
+		CB6D39432BA7711F0098AE0E /* Mood.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6D390A2BA7711F0098AE0E /* Mood.swift */; };
+		CB6D39442BA7711F0098AE0E /* Quote.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6D390B2BA7711F0098AE0E /* Quote.swift */; };
+		CB6D39452BA7711F0098AE0E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6D390C2BA7711F0098AE0E /* User.swift */; };
+		CB6D39462BA7711F0098AE0E /* CreateUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6D390F2BA7711F0098AE0E /* CreateUserView.swift */; };
+		CB6D39472BA7711F0098AE0E /* InformationContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6D39112BA7711F0098AE0E /* InformationContainerView.swift */; };
+		CB6D39482BA7711F0098AE0E /* InformationDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6D39122BA7711F0098AE0E /* InformationDetailView.swift */; };
+		CB6D39492BA7711F0098AE0E /* WelcomeHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6D39132BA7711F0098AE0E /* WelcomeHeader.swift */; };
+		CB6D394A2BA7711F0098AE0E /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6D39142BA7711F0098AE0E /* WelcomeView.swift */; };
+		CB6D394B2BA7711F0098AE0E /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6D39162BA7711F0098AE0E /* OnboardingView.swift */; };
+		CB6D394C2BA7711F0098AE0E /* QuoteAddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6D39182BA7711F0098AE0E /* QuoteAddView.swift */; };
+		CB6D394D2BA7711F0098AE0E /* QuoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6D39192BA7711F0098AE0E /* QuoteView.swift */; };
+		CB6D394F2BA7711F0098AE0E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB6D391C2BA7711F0098AE0E /* Images.xcassets */; };
+		CB6D39502BA7711F0098AE0E /* SparkleRing(Hoch).mp4 in Resources */ = {isa = PBXBuildFile; fileRef = CB6D391D2BA7711F0098AE0E /* SparkleRing(Hoch).mp4 */; };
+		CB6D39512BA7711F0098AE0E /* DailyTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6D391F2BA7711F0098AE0E /* DailyTask.swift */; };
+		CB6D39522BA7711F0098AE0E /* OnboardingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6D39202BA7711F0098AE0E /* OnboardingScreen.swift */; };
+		CB6D39532BA7711F0098AE0E /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6D39222BA7711F0098AE0E /* Color.swift */; };
+		CB6D39542BA7711F0098AE0E /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6D39232BA7711F0098AE0E /* Image.swift */; };
+		CB6D39552BA7711F0098AE0E /* MoodLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6D39252BA7711F0098AE0E /* MoodLevel.swift */; };
+		CB6D39562BA7711F0098AE0E /* BatteryTip.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6D39272BA7711F0098AE0E /* BatteryTip.swift */; };
+		CB6D39572BA7711F0098AE0E /* GratitudeTip.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6D39282BA7711F0098AE0E /* GratitudeTip.swift */; };
+		CB6D39582BA7711F0098AE0E /* QuoteTip.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6D39292BA7711F0098AE0E /* QuoteTip.swift */; };
+		CB6D39592BA7711F0098AE0E /* RingTip.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6D392A2BA7711F0098AE0E /* RingTip.swift */; };
+		CB6D395A2BA7711F0098AE0E /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6D392C2BA7711F0098AE0E /* Card.swift */; };
+		CB6D395B2BA7711F0098AE0E /* HalfCircleShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6D392D2BA7711F0098AE0E /* HalfCircleShape.swift */; };
+		CB6D395C2BA7711F0098AE0E /* MoodBarometer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6D392E2BA7711F0098AE0E /* MoodBarometer.swift */; };
+		CB6D395D2BA7711F0098AE0E /* PlusButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6D392F2BA7711F0098AE0E /* PlusButton.swift */; };
+		CB6D395E2BA7711F0098AE0E /* ProgressRing.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6D39302BA7711F0098AE0E /* ProgressRing.swift */; };
+		CB6D395F2BA7711F0098AE0E /* SparkleRing.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6D39312BA7711F0098AE0E /* SparkleRing.swift */; };
+		CB6D39602BA7711F0098AE0E /* StatisticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6D39342BA7711F0098AE0E /* StatisticsView.swift */; };
+		CB6D39612BA7711F0098AE0E /* TodayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6D39362BA7711F0098AE0E /* TodayView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CB6D38DE2BA7706F0098AE0E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CB6D38C42BA7706D0098AE0E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CB6D38CB2BA7706D0098AE0E;
+			remoteInfo = SparkleUP;
+		};
+		CB6D38E82BA7706F0098AE0E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CB6D38C42BA7706D0098AE0E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CB6D38CB2BA7706D0098AE0E;
+			remoteInfo = SparkleUP;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		CB6D38CC2BA7706D0098AE0E /* SparkleUP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SparkleUP.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB6D38CF2BA7706D0098AE0E /* SparkleUPApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SparkleUPApp.swift; sourceTree = "<group>"; };
+		CB6D38D12BA7706D0098AE0E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		CB6D38D32BA7706F0098AE0E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CB6D38D52BA7706F0098AE0E /* SparkleUP.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SparkleUP.entitlements; sourceTree = "<group>"; };
+		CB6D38D72BA7706F0098AE0E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		CB6D38DD2BA7706F0098AE0E /* SparkleUPTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SparkleUPTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB6D38E12BA7706F0098AE0E /* SparkleUPTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SparkleUPTests.swift; sourceTree = "<group>"; };
+		CB6D38E72BA7706F0098AE0E /* SparkleUPUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SparkleUPUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB6D38EB2BA7706F0098AE0E /* SparkleUPUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SparkleUPUITests.swift; sourceTree = "<group>"; };
+		CB6D38ED2BA7706F0098AE0E /* SparkleUPUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SparkleUPUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		CB6D38FA2BA7711F0098AE0E /* AppScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppScreen.swift; sourceTree = "<group>"; };
+		CB6D38FB2BA7711F0098AE0E /* AppTabView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppTabView.swift; sourceTree = "<group>"; };
+		CB6D38FD2BA7711F0098AE0E /* MoodListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoodListView.swift; sourceTree = "<group>"; };
+		CB6D38FE2BA7711F0098AE0E /* MoodModifyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoodModifyView.swift; sourceTree = "<group>"; };
+		CB6D39002BA7711F0098AE0E /* AccountEditView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountEditView.swift; sourceTree = "<group>"; };
+		CB6D39012BA7711F0098AE0E /* AccountView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
+		CB6D39032BA7711F0098AE0E /* GratitudeListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GratitudeListView.swift; sourceTree = "<group>"; };
+		CB6D39042BA7711F0098AE0E /* GratitudeModifyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GratitudeModifyView.swift; sourceTree = "<group>"; };
+		CB6D39062BA7711F0098AE0E /* CardData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardData.swift; sourceTree = "<group>"; };
+		CB6D39082BA7711F0098AE0E /* Day.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Day.swift; sourceTree = "<group>"; };
+		CB6D39092BA7711F0098AE0E /* Gratitude.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gratitude.swift; sourceTree = "<group>"; };
+		CB6D390A2BA7711F0098AE0E /* Mood.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mood.swift; sourceTree = "<group>"; };
+		CB6D390B2BA7711F0098AE0E /* Quote.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Quote.swift; sourceTree = "<group>"; };
+		CB6D390C2BA7711F0098AE0E /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		CB6D390F2BA7711F0098AE0E /* CreateUserView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateUserView.swift; sourceTree = "<group>"; };
+		CB6D39112BA7711F0098AE0E /* InformationContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InformationContainerView.swift; sourceTree = "<group>"; };
+		CB6D39122BA7711F0098AE0E /* InformationDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InformationDetailView.swift; sourceTree = "<group>"; };
+		CB6D39132BA7711F0098AE0E /* WelcomeHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeHeader.swift; sourceTree = "<group>"; };
+		CB6D39142BA7711F0098AE0E /* WelcomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
+		CB6D39162BA7711F0098AE0E /* OnboardingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		CB6D39182BA7711F0098AE0E /* QuoteAddView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuoteAddView.swift; sourceTree = "<group>"; };
+		CB6D39192BA7711F0098AE0E /* QuoteView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuoteView.swift; sourceTree = "<group>"; };
+		CB6D391C2BA7711F0098AE0E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		CB6D391D2BA7711F0098AE0E /* SparkleRing(Hoch).mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SparkleRing(Hoch).mp4"; sourceTree = "<group>"; };
+		CB6D391F2BA7711F0098AE0E /* DailyTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DailyTask.swift; sourceTree = "<group>"; };
+		CB6D39202BA7711F0098AE0E /* OnboardingScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingScreen.swift; sourceTree = "<group>"; };
+		CB6D39222BA7711F0098AE0E /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		CB6D39232BA7711F0098AE0E /* Image.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
+		CB6D39252BA7711F0098AE0E /* MoodLevel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoodLevel.swift; sourceTree = "<group>"; };
+		CB6D39272BA7711F0098AE0E /* BatteryTip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BatteryTip.swift; sourceTree = "<group>"; };
+		CB6D39282BA7711F0098AE0E /* GratitudeTip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GratitudeTip.swift; sourceTree = "<group>"; };
+		CB6D39292BA7711F0098AE0E /* QuoteTip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuoteTip.swift; sourceTree = "<group>"; };
+		CB6D392A2BA7711F0098AE0E /* RingTip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RingTip.swift; sourceTree = "<group>"; };
+		CB6D392C2BA7711F0098AE0E /* Card.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		CB6D392D2BA7711F0098AE0E /* HalfCircleShape.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HalfCircleShape.swift; sourceTree = "<group>"; };
+		CB6D392E2BA7711F0098AE0E /* MoodBarometer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoodBarometer.swift; sourceTree = "<group>"; };
+		CB6D392F2BA7711F0098AE0E /* PlusButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlusButton.swift; sourceTree = "<group>"; };
+		CB6D39302BA7711F0098AE0E /* ProgressRing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressRing.swift; sourceTree = "<group>"; };
+		CB6D39312BA7711F0098AE0E /* SparkleRing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SparkleRing.swift; sourceTree = "<group>"; };
+		CB6D39342BA7711F0098AE0E /* StatisticsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatisticsView.swift; sourceTree = "<group>"; };
+		CB6D39362BA7711F0098AE0E /* TodayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodayView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CB6D38C92BA7706D0098AE0E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CB6D38DA2BA7706F0098AE0E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CB6D38E42BA7706F0098AE0E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CB6D38C32BA7706D0098AE0E = {
+			isa = PBXGroup;
+			children = (
+				CB6D38CE2BA7706D0098AE0E /* SparkleUP */,
+				CB6D38E02BA7706F0098AE0E /* SparkleUPTests */,
+				CB6D38EA2BA7706F0098AE0E /* SparkleUPUITests */,
+				CB6D38CD2BA7706D0098AE0E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CB6D38CD2BA7706D0098AE0E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CB6D38CC2BA7706D0098AE0E /* SparkleUP.app */,
+				CB6D38DD2BA7706F0098AE0E /* SparkleUPTests.xctest */,
+				CB6D38E72BA7706F0098AE0E /* SparkleUPUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CB6D38CE2BA7706D0098AE0E /* SparkleUP */ = {
+			isa = PBXGroup;
+			children = (
+				CB6D39632BA771990098AE0E /* App */,
+				CB6D390E2BA7711F0098AE0E /* Common */,
+				CB6D391E2BA7711F0098AE0E /* Resources */,
+				CB6D39332BA7711F0098AE0E /* Utils */,
+				CB6D38D32BA7706F0098AE0E /* Assets.xcassets */,
+				CB6D38D52BA7706F0098AE0E /* SparkleUP.entitlements */,
+				CB6D38D62BA7706F0098AE0E /* Preview Content */,
+			);
+			path = SparkleUP;
+			sourceTree = "<group>";
+		};
+		CB6D38D62BA7706F0098AE0E /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				CB6D38D72BA7706F0098AE0E /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		CB6D38E02BA7706F0098AE0E /* SparkleUPTests */ = {
+			isa = PBXGroup;
+			children = (
+				CB6D38E12BA7706F0098AE0E /* SparkleUPTests.swift */,
+			);
+			path = SparkleUPTests;
+			sourceTree = "<group>";
+		};
+		CB6D38EA2BA7706F0098AE0E /* SparkleUPUITests */ = {
+			isa = PBXGroup;
+			children = (
+				CB6D38EB2BA7706F0098AE0E /* SparkleUPUITests.swift */,
+				CB6D38ED2BA7706F0098AE0E /* SparkleUPUITestsLaunchTests.swift */,
+			);
+			path = SparkleUPUITests;
+			sourceTree = "<group>";
+		};
+		CB6D38FC2BA7711F0098AE0E /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				CB6D38FA2BA7711F0098AE0E /* AppScreen.swift */,
+				CB6D38FB2BA7711F0098AE0E /* AppTabView.swift */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
+		CB6D38FF2BA7711F0098AE0E /* Mood */ = {
+			isa = PBXGroup;
+			children = (
+				CB6D38FD2BA7711F0098AE0E /* MoodListView.swift */,
+				CB6D38FE2BA7711F0098AE0E /* MoodModifyView.swift */,
+			);
+			path = Mood;
+			sourceTree = "<group>";
+		};
+		CB6D39022BA7711F0098AE0E /* Account */ = {
+			isa = PBXGroup;
+			children = (
+				CB6D39002BA7711F0098AE0E /* AccountEditView.swift */,
+				CB6D39012BA7711F0098AE0E /* AccountView.swift */,
+			);
+			path = Account;
+			sourceTree = "<group>";
+		};
+		CB6D39052BA7711F0098AE0E /* Gratitude */ = {
+			isa = PBXGroup;
+			children = (
+				CB6D39032BA7711F0098AE0E /* GratitudeListView.swift */,
+				CB6D39042BA7711F0098AE0E /* GratitudeModifyView.swift */,
+			);
+			path = Gratitude;
+			sourceTree = "<group>";
+		};
+		CB6D39072BA7711F0098AE0E /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				CB6D39062BA7711F0098AE0E /* CardData.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		CB6D390D2BA7711F0098AE0E /* DataModels */ = {
+			isa = PBXGroup;
+			children = (
+				CB6D39082BA7711F0098AE0E /* Day.swift */,
+				CB6D39092BA7711F0098AE0E /* Gratitude.swift */,
+				CB6D390A2BA7711F0098AE0E /* Mood.swift */,
+				CB6D390B2BA7711F0098AE0E /* Quote.swift */,
+				CB6D390C2BA7711F0098AE0E /* User.swift */,
+			);
+			path = DataModels;
+			sourceTree = "<group>";
+		};
+		CB6D390E2BA7711F0098AE0E /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				CB6D39072BA7711F0098AE0E /* Data */,
+				CB6D390D2BA7711F0098AE0E /* DataModels */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		CB6D39102BA7711F0098AE0E /* User */ = {
+			isa = PBXGroup;
+			children = (
+				CB6D390F2BA7711F0098AE0E /* CreateUserView.swift */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		CB6D39152BA7711F0098AE0E /* Welcome */ = {
+			isa = PBXGroup;
+			children = (
+				CB6D39112BA7711F0098AE0E /* InformationContainerView.swift */,
+				CB6D39122BA7711F0098AE0E /* InformationDetailView.swift */,
+				CB6D39132BA7711F0098AE0E /* WelcomeHeader.swift */,
+				CB6D39142BA7711F0098AE0E /* WelcomeView.swift */,
+			);
+			path = Welcome;
+			sourceTree = "<group>";
+		};
+		CB6D39172BA7711F0098AE0E /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				CB6D39102BA7711F0098AE0E /* User */,
+				CB6D39152BA7711F0098AE0E /* Welcome */,
+				CB6D39162BA7711F0098AE0E /* OnboardingView.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		CB6D391A2BA7711F0098AE0E /* Quote */ = {
+			isa = PBXGroup;
+			children = (
+				CB6D39182BA7711F0098AE0E /* QuoteAddView.swift */,
+				CB6D39192BA7711F0098AE0E /* QuoteView.swift */,
+			);
+			path = Quote;
+			sourceTree = "<group>";
+		};
+		CB6D391E2BA7711F0098AE0E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				CB6D391C2BA7711F0098AE0E /* Images.xcassets */,
+				CB6D391D2BA7711F0098AE0E /* SparkleRing(Hoch).mp4 */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		CB6D39212BA7711F0098AE0E /* Enumerates */ = {
+			isa = PBXGroup;
+			children = (
+				CB6D391F2BA7711F0098AE0E /* DailyTask.swift */,
+				CB6D39202BA7711F0098AE0E /* OnboardingScreen.swift */,
+			);
+			path = Enumerates;
+			sourceTree = "<group>";
+		};
+		CB6D39242BA7711F0098AE0E /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				CB6D39222BA7711F0098AE0E /* Color.swift */,
+				CB6D39232BA7711F0098AE0E /* Image.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		CB6D39262BA7711F0098AE0E /* Switch */ = {
+			isa = PBXGroup;
+			children = (
+				CB6D39252BA7711F0098AE0E /* MoodLevel.swift */,
+			);
+			path = Switch;
+			sourceTree = "<group>";
+		};
+		CB6D392B2BA7711F0098AE0E /* Tips */ = {
+			isa = PBXGroup;
+			children = (
+				CB6D39272BA7711F0098AE0E /* BatteryTip.swift */,
+				CB6D39282BA7711F0098AE0E /* GratitudeTip.swift */,
+				CB6D39292BA7711F0098AE0E /* QuoteTip.swift */,
+				CB6D392A2BA7711F0098AE0E /* RingTip.swift */,
+			);
+			path = Tips;
+			sourceTree = "<group>";
+		};
+		CB6D39322BA7711F0098AE0E /* UIComponents */ = {
+			isa = PBXGroup;
+			children = (
+				CB6D392C2BA7711F0098AE0E /* Card.swift */,
+				CB6D392D2BA7711F0098AE0E /* HalfCircleShape.swift */,
+				CB6D392E2BA7711F0098AE0E /* MoodBarometer.swift */,
+				CB6D392F2BA7711F0098AE0E /* PlusButton.swift */,
+				CB6D39302BA7711F0098AE0E /* ProgressRing.swift */,
+				CB6D39312BA7711F0098AE0E /* SparkleRing.swift */,
+			);
+			path = UIComponents;
+			sourceTree = "<group>";
+		};
+		CB6D39332BA7711F0098AE0E /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				CB6D39212BA7711F0098AE0E /* Enumerates */,
+				CB6D39242BA7711F0098AE0E /* Extensions */,
+				CB6D39262BA7711F0098AE0E /* Switch */,
+				CB6D392B2BA7711F0098AE0E /* Tips */,
+				CB6D39322BA7711F0098AE0E /* UIComponents */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		CB6D39352BA7711F0098AE0E /* Statistics */ = {
+			isa = PBXGroup;
+			children = (
+				CB6D39342BA7711F0098AE0E /* StatisticsView.swift */,
+			);
+			path = Statistics;
+			sourceTree = "<group>";
+		};
+		CB6D39372BA7711F0098AE0E /* Today */ = {
+			isa = PBXGroup;
+			children = (
+				CB6D39362BA7711F0098AE0E /* TodayView.swift */,
+			);
+			path = Today;
+			sourceTree = "<group>";
+		};
+		CB6D39622BA7718B0098AE0E /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				CB6D38D12BA7706D0098AE0E /* ContentView.swift */,
+				CB6D38CF2BA7706D0098AE0E /* SparkleUPApp.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		CB6D39632BA771990098AE0E /* App */ = {
+			isa = PBXGroup;
+			children = (
+				CB6D39622BA7718B0098AE0E /* Main */,
+				CB6D38FC2BA7711F0098AE0E /* Navigation */,
+				CB6D39172BA7711F0098AE0E /* Onboarding */,
+				CB6D39372BA7711F0098AE0E /* Today */,
+				CB6D38FF2BA7711F0098AE0E /* Mood */,
+				CB6D39352BA7711F0098AE0E /* Statistics */,
+				CB6D391A2BA7711F0098AE0E /* Quote */,
+				CB6D39052BA7711F0098AE0E /* Gratitude */,
+				CB6D39022BA7711F0098AE0E /* Account */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CB6D38CB2BA7706D0098AE0E /* SparkleUP */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CB6D38F12BA7706F0098AE0E /* Build configuration list for PBXNativeTarget "SparkleUP" */;
+			buildPhases = (
+				CB6D38C82BA7706D0098AE0E /* Sources */,
+				CB6D38C92BA7706D0098AE0E /* Frameworks */,
+				CB6D38CA2BA7706D0098AE0E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SparkleUP;
+			productName = SparkleUP;
+			productReference = CB6D38CC2BA7706D0098AE0E /* SparkleUP.app */;
+			productType = "com.apple.product-type.application";
+		};
+		CB6D38DC2BA7706F0098AE0E /* SparkleUPTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CB6D38F42BA7706F0098AE0E /* Build configuration list for PBXNativeTarget "SparkleUPTests" */;
+			buildPhases = (
+				CB6D38D92BA7706F0098AE0E /* Sources */,
+				CB6D38DA2BA7706F0098AE0E /* Frameworks */,
+				CB6D38DB2BA7706F0098AE0E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CB6D38DF2BA7706F0098AE0E /* PBXTargetDependency */,
+			);
+			name = SparkleUPTests;
+			productName = SparkleUPTests;
+			productReference = CB6D38DD2BA7706F0098AE0E /* SparkleUPTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		CB6D38E62BA7706F0098AE0E /* SparkleUPUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CB6D38F72BA7706F0098AE0E /* Build configuration list for PBXNativeTarget "SparkleUPUITests" */;
+			buildPhases = (
+				CB6D38E32BA7706F0098AE0E /* Sources */,
+				CB6D38E42BA7706F0098AE0E /* Frameworks */,
+				CB6D38E52BA7706F0098AE0E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CB6D38E92BA7706F0098AE0E /* PBXTargetDependency */,
+			);
+			name = SparkleUPUITests;
+			productName = SparkleUPUITests;
+			productReference = CB6D38E72BA7706F0098AE0E /* SparkleUPUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CB6D38C42BA7706D0098AE0E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1530;
+				LastUpgradeCheck = 1530;
+				TargetAttributes = {
+					CB6D38CB2BA7706D0098AE0E = {
+						CreatedOnToolsVersion = 15.3;
+					};
+					CB6D38DC2BA7706F0098AE0E = {
+						CreatedOnToolsVersion = 15.3;
+						TestTargetID = CB6D38CB2BA7706D0098AE0E;
+					};
+					CB6D38E62BA7706F0098AE0E = {
+						CreatedOnToolsVersion = 15.3;
+						TestTargetID = CB6D38CB2BA7706D0098AE0E;
+					};
+				};
+			};
+			buildConfigurationList = CB6D38C72BA7706D0098AE0E /* Build configuration list for PBXProject "SparkleUP" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CB6D38C32BA7706D0098AE0E;
+			productRefGroup = CB6D38CD2BA7706D0098AE0E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CB6D38CB2BA7706D0098AE0E /* SparkleUP */,
+				CB6D38DC2BA7706F0098AE0E /* SparkleUPTests */,
+				CB6D38E62BA7706F0098AE0E /* SparkleUPUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CB6D38CA2BA7706D0098AE0E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CB6D38D82BA7706F0098AE0E /* Preview Assets.xcassets in Resources */,
+				CB6D39502BA7711F0098AE0E /* SparkleRing(Hoch).mp4 in Resources */,
+				CB6D394F2BA7711F0098AE0E /* Images.xcassets in Resources */,
+				CB6D38D42BA7706F0098AE0E /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CB6D38DB2BA7706F0098AE0E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CB6D38E52BA7706F0098AE0E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CB6D38C82BA7706D0098AE0E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CB6D393A2BA7711F0098AE0E /* MoodListView.swift in Sources */,
+				CB6D393B2BA7711F0098AE0E /* MoodModifyView.swift in Sources */,
+				CB6D39412BA7711F0098AE0E /* Day.swift in Sources */,
+				CB6D39562BA7711F0098AE0E /* BatteryTip.swift in Sources */,
+				CB6D39582BA7711F0098AE0E /* QuoteTip.swift in Sources */,
+				CB6D39422BA7711F0098AE0E /* Gratitude.swift in Sources */,
+				CB6D39462BA7711F0098AE0E /* CreateUserView.swift in Sources */,
+				CB6D39452BA7711F0098AE0E /* User.swift in Sources */,
+				CB6D38D22BA7706D0098AE0E /* ContentView.swift in Sources */,
+				CB6D395F2BA7711F0098AE0E /* SparkleRing.swift in Sources */,
+				CB6D39492BA7711F0098AE0E /* WelcomeHeader.swift in Sources */,
+				CB6D39402BA7711F0098AE0E /* CardData.swift in Sources */,
+				CB6D393E2BA7711F0098AE0E /* GratitudeListView.swift in Sources */,
+				CB6D393F2BA7711F0098AE0E /* GratitudeModifyView.swift in Sources */,
+				CB6D39552BA7711F0098AE0E /* MoodLevel.swift in Sources */,
+				CB6D395D2BA7711F0098AE0E /* PlusButton.swift in Sources */,
+				CB6D38D02BA7706D0098AE0E /* SparkleUPApp.swift in Sources */,
+				CB6D39612BA7711F0098AE0E /* TodayView.swift in Sources */,
+				CB6D393D2BA7711F0098AE0E /* AccountView.swift in Sources */,
+				CB6D395B2BA7711F0098AE0E /* HalfCircleShape.swift in Sources */,
+				CB6D39592BA7711F0098AE0E /* RingTip.swift in Sources */,
+				CB6D394A2BA7711F0098AE0E /* WelcomeView.swift in Sources */,
+				CB6D39602BA7711F0098AE0E /* StatisticsView.swift in Sources */,
+				CB6D39572BA7711F0098AE0E /* GratitudeTip.swift in Sources */,
+				CB6D39482BA7711F0098AE0E /* InformationDetailView.swift in Sources */,
+				CB6D39432BA7711F0098AE0E /* Mood.swift in Sources */,
+				CB6D39512BA7711F0098AE0E /* DailyTask.swift in Sources */,
+				CB6D395E2BA7711F0098AE0E /* ProgressRing.swift in Sources */,
+				CB6D39532BA7711F0098AE0E /* Color.swift in Sources */,
+				CB6D395A2BA7711F0098AE0E /* Card.swift in Sources */,
+				CB6D39392BA7711F0098AE0E /* AppTabView.swift in Sources */,
+				CB6D395C2BA7711F0098AE0E /* MoodBarometer.swift in Sources */,
+				CB6D393C2BA7711F0098AE0E /* AccountEditView.swift in Sources */,
+				CB6D39442BA7711F0098AE0E /* Quote.swift in Sources */,
+				CB6D39542BA7711F0098AE0E /* Image.swift in Sources */,
+				CB6D394D2BA7711F0098AE0E /* QuoteView.swift in Sources */,
+				CB6D39382BA7711F0098AE0E /* AppScreen.swift in Sources */,
+				CB6D39522BA7711F0098AE0E /* OnboardingScreen.swift in Sources */,
+				CB6D394C2BA7711F0098AE0E /* QuoteAddView.swift in Sources */,
+				CB6D39472BA7711F0098AE0E /* InformationContainerView.swift in Sources */,
+				CB6D394B2BA7711F0098AE0E /* OnboardingView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CB6D38D92BA7706F0098AE0E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CB6D38E22BA7706F0098AE0E /* SparkleUPTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CB6D38E32BA7706F0098AE0E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CB6D38EE2BA7706F0098AE0E /* SparkleUPUITestsLaunchTests.swift in Sources */,
+				CB6D38EC2BA7706F0098AE0E /* SparkleUPUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CB6D38DF2BA7706F0098AE0E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CB6D38CB2BA7706D0098AE0E /* SparkleUP */;
+			targetProxy = CB6D38DE2BA7706F0098AE0E /* PBXContainerItemProxy */;
+		};
+		CB6D38E92BA7706F0098AE0E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CB6D38CB2BA7706D0098AE0E /* SparkleUP */;
+			targetProxy = CB6D38E82BA7706F0098AE0E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		CB6D38EF2BA7706F0098AE0E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		CB6D38F02BA7706F0098AE0E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		CB6D38F22BA7706F0098AE0E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = SparkleUP/SparkleUP.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"SparkleUP/Preview Content\"";
+				DEVELOPMENT_TEAM = 7SM6PL3XT8;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 14.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ch.romanindermuehle.SparkleUP;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CB6D38F32BA7706F0098AE0E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = SparkleUP/SparkleUP.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"SparkleUP/Preview Content\"";
+				DEVELOPMENT_TEAM = 7SM6PL3XT8;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 14.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ch.romanindermuehle.SparkleUP;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		CB6D38F52BA7706F0098AE0E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 7SM6PL3XT8;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				MACOSX_DEPLOYMENT_TARGET = 14.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ch.romanindermuehle.SparkleUPTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SparkleUP.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SparkleUP";
+			};
+			name = Debug;
+		};
+		CB6D38F62BA7706F0098AE0E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 7SM6PL3XT8;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				MACOSX_DEPLOYMENT_TARGET = 14.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ch.romanindermuehle.SparkleUPTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SparkleUP.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SparkleUP";
+			};
+			name = Release;
+		};
+		CB6D38F82BA7706F0098AE0E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 7SM6PL3XT8;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				MACOSX_DEPLOYMENT_TARGET = 14.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ch.romanindermuehle.SparkleUPUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = SparkleUP;
+			};
+			name = Debug;
+		};
+		CB6D38F92BA7706F0098AE0E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 7SM6PL3XT8;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				MACOSX_DEPLOYMENT_TARGET = 14.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ch.romanindermuehle.SparkleUPUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = SparkleUP;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CB6D38C72BA7706D0098AE0E /* Build configuration list for PBXProject "SparkleUP" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CB6D38EF2BA7706F0098AE0E /* Debug */,
+				CB6D38F02BA7706F0098AE0E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CB6D38F12BA7706F0098AE0E /* Build configuration list for PBXNativeTarget "SparkleUP" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CB6D38F22BA7706F0098AE0E /* Debug */,
+				CB6D38F32BA7706F0098AE0E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CB6D38F42BA7706F0098AE0E /* Build configuration list for PBXNativeTarget "SparkleUPTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CB6D38F52BA7706F0098AE0E /* Debug */,
+				CB6D38F62BA7706F0098AE0E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CB6D38F72BA7706F0098AE0E /* Build configuration list for PBXNativeTarget "SparkleUPUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CB6D38F82BA7706F0098AE0E /* Debug */,
+				CB6D38F92BA7706F0098AE0E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CB6D38C42BA7706D0098AE0E /* Project object */;
+}
