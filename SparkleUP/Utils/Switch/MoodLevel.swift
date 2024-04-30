@@ -13,16 +13,14 @@ struct MoodLevel {
     static var valueToColor: (Double) -> Color {
         { value in
             switch value {
-            case 0.0...0.2:
-                return Color.darkerMagenta.opacity(0.25)
-            case 0.2...0.4:
-                return Color.darkerMagenta.opacity(0.5)
-            case 0.4...0.6:
-                return Color.lightMagenta
-            case 0.6...0.8:
-                return Color.darkMagenta
-            case 0.8...1:
-                return Color.darkerMagenta
+            case 0.0...0.25:
+                return Color.red
+            case 0.25...0.5:
+                return Color.orange
+            case 0.5...0.75:
+                return Color.yellow
+            case 0.75...1:
+                return Color.green
                 
             default:
                 return Color.clear
@@ -33,15 +31,13 @@ struct MoodLevel {
     static var colorToWord: (Color) -> String {
         { word in
             switch word {
-            case Color.darkerMagenta.opacity(0.25):
-                return "Upset"
-            case Color.darkerMagenta.opacity(0.5):
+            case Color.red:
                 return "Sad"
-            case Color.lightMagenta:
+            case Color.orange:
                 return "Indifferent"
-            case Color.darkMagenta:
+            case Color.yellow:
                 return "Happy"
-            case Color.darkerMagenta:
+            case Color.green:
                 return "Fulfilled"
             default:
                 return ""

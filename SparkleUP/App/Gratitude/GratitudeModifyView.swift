@@ -34,7 +34,9 @@ struct GratitudeModifyView: View {
             Section {
                 TipView(gratitudeTip, arrowEdge: .bottom)
                     .padding()
+                    #if os(iOS)
                     .tipBackground(Color.accentColor.opacity(0.1))
+                    #endif
             }
             .listRowBackground(Color.clear)
             .listRowSeparator(.hidden)
@@ -56,7 +58,7 @@ struct GratitudeModifyView: View {
                             Text("90")
                         }
                         .gaugeStyle(.accessoryCircular)
-                        .tint(Gradient(colors: [.darkMagenta.opacity(0.25), .darkMagenta.opacity(0.5), .lightMagenta, .darkMagenta, .darkerMagenta]))
+                        .tint(Gradient(colors: [.lightMagenta, .darkMagenta]))
                     }
                     .frame(maxWidth: .infinity, alignment: .center)
                 }
@@ -69,7 +71,6 @@ struct GratitudeModifyView: View {
                     TextField("I'm grateful for...", text: $gratitudeValue2)
                 } else {
                     Image(systemName: "lock.badge.clock.fill")
-                        .symbolRenderingMode(.hierarchical)
                         .foregroundStyle(Color.accentColor)
                     TextField("Unlocked after 30 days", text: $gratitudeValue2)
                         .disabled(true || isEditing)
@@ -80,7 +81,6 @@ struct GratitudeModifyView: View {
                     TextField("I'm grateful for...", text: $gratitudeValue3)
                 } else {
                     Image(systemName: "lock.badge.clock.fill")
-                        .symbolRenderingMode(.hierarchical)
                         .foregroundStyle(Color.accentColor)
                     TextField("Unlocked after 90 days", text: $gratitudeValue3)
                         .disabled(true || isEditing)
@@ -94,24 +94,6 @@ struct GratitudeModifyView: View {
                 }
                 .disabled(gratitudeValue1.isEmpty || isEditing)
                 .fontWeight(.bold)
-            }
-            
-            ToolbarItem(placement: .bottomBar) {
-                Button {
-                    saveGratitude()
-                } label: {
-                    Text("Save")
-                        .frame(width: 250, height: 50)
-                        .font(.title2)
-                        .fontWeight(.bold)
-                        .background(Color.accentColor)
-                        .foregroundStyle(.white)
-                        .clipShape(RoundedRectangle(cornerRadius: 15))
-                        .padding()
-                    
-                }
-                .padding(.bottom)
-                .disabled(gratitudeValue1.isEmpty || isEditing)
             }
         }
         .navigationTitle("What are you grateful for today?")

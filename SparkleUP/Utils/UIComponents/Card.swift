@@ -1,6 +1,6 @@
 //
 //  Card.swift
-//  
+//
 //
 //  Created by Roman Indermühle on 24.01.2024.
 //
@@ -8,47 +8,44 @@
 import SwiftUI
 
 struct Card: View {
-    
-    private var quoteSizeWidth: CGFloat {
-        if UIDevice.current.userInterfaceIdiom == .phone {
-            return UIScreen.main.bounds.width - 60.0
-        } else {
-            return UIScreen.main.bounds.width - 80.0
-        }
-    }
-    
-    
-    private var quoteSizeHeight: CGFloat {
-        if UIDevice.current.userInterfaceIdiom == .phone {
-            return UIScreen.main.bounds.height
-        } else {
-            return UIScreen.main.bounds.height - 215.0
-        }
-    }
-    
     var quote: String
     var author: String
     var image: String
+    
+    var splitViewVisibility: NavigationSplitViewVisibility?
+    
+    var screenWidth: Int? {
+        if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene {
+            return Int(windowScene.coordinateSpace.bounds.width) - (splitViewVisibility == .detailOnly ? 0: 50)
+        }
+        return nil
+    }
+    
+    var screenHeight: Int? {
+        if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene {
+            return Int(windowScene.coordinateSpace.bounds.height) - (splitViewVisibility == .detailOnly ? 0: 250)
+        }
+        return nil
+    }
     
     var body: some View {
         ZStack {
             Image(image)
                 .resizable()
                 .scaledToFill()
-                .frame(maxWidth: quoteSizeWidth, maxHeight: quoteSizeHeight)
-                .clipShape(.rect(cornerRadius: 25))
+                .frame(maxWidth: CGFloat(screenWidth ?? 0), maxHeight: CGFloat(screenHeight ?? 0))
+                .clipShape(RoundedRectangle(cornerRadius: 25, style: .continuous))
                 .shadow(radius: 8)
             VStack(alignment: .leading, spacing: 5) {
                 Text(quote)
-                    .font(.system(.title, design: .rounded))
+                    .font(.title)
                     .fontWeight(.bold)
                     .foregroundStyle(.white)
                 Text(author)
                     .font(.headline)
                     .foregroundStyle(.white)
             }
-            .padding(25)
-
+            .padding(.horizontal, 50)
         }
     }
 }

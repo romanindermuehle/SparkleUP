@@ -17,22 +17,6 @@ struct TodayView: View {
     
     @State var showSparkle: Bool = false
     
-    private var ringSizeWidth: CGFloat {
-        if UIDevice.current.userInterfaceIdiom == .phone {
-            return UIScreen.main.bounds.width - 100.0
-        } else {
-            return UIScreen.main.bounds.width / 4
-        }
-    }
-    
-    private var ringSizeHeight: CGFloat {
-        if UIDevice.current.userInterfaceIdiom == .phone {
-            return UIScreen.main.bounds.height / 3
-        } else {
-            return UIScreen.main.bounds.height / 3
-        }
-    }
-    
     var ringTip = RingTip()
     
     var body: some View {
@@ -40,17 +24,16 @@ struct TodayView: View {
             if let day = days.last {
                 Form {
                     Section {
-                        ProgressRing(day: day, ringSizeHeight: ringSizeHeight, ringSizeWidth: ringSizeWidth, ringThickness: 30.0, ringHeight: 30.0, ringWidth: 30.0)
+                        ProgressRing(day: day, ringSizeHeight: 350, ringSizeWidth: 350, ringThickness: 30.0, ringHeight: 30.0, ringWidth: 30.0, fontSize: 64)
                             .padding(.top, 8)
                             .padding(.bottom, 35)
-                        Text("\(day.percentage * 100, specifier: "%.0f") of 100%")
-                            .font(.title2)
-                            .fontWeight(.bold)
-                            .foregroundStyle(Color.accentColor)
+                        
                         
                         TipView(ringTip, arrowEdge: .top)
                             .padding()
+                        #if os(iOS)
                             .tipBackground(Color.accentColor.opacity(0.1))
+                        #endif
                         
                     }
                     .listRowBackground(Color.clear)
@@ -74,7 +57,9 @@ struct TodayView: View {
                 .onAppear {
                     
                     if day.percentage >= 1.0 && day.sparkleSeen != true {
-                        showSparkle.toggle()
+                        DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(1000)) {
+                            showSparkle.toggle()
+                        }
                         day.sparkleSeen = true
                         print(showSparkle)
                     } else {
@@ -90,7 +75,7 @@ struct TodayView: View {
                 }
                 .fullScreenCover(isPresented: $showSparkle) {
                     NavigationStack {
-                        SparkleRing(showSparkle: $showSparkle)
+                        SparkleRing()
                     }
                 }
             }

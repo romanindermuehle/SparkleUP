@@ -39,7 +39,7 @@ extension AppScreen {
         case .statistics:
             StatisticsView()
         case .account:
-                AccountView()
+            AccountView()
         }
     }
 }

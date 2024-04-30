@@ -6,50 +6,65 @@
 //
 
 import SwiftUI
-import AVKit
+import Vortex
 
-struct SparkleRing: View {
-    
-    @State private var player = AVPlayer()
-    
-    @Binding var showSparkle: Bool
-    
+struct SparkleRing: View {    
     @Environment(\.dismiss) var dismiss
-    private let CardSize: CGFloat = UIScreen.main.bounds.width - 60.0
     
     var body: some View {
-        
-        VideoPlayer(player: player)
-            .disabled(true)
-            .onAppear {
-                if let filePath = Bundle.main.url(forResource: "SparkleRing(Hoch)", withExtension: "mp4") {
-                    player = AVPlayer(url: filePath)
-                }
-                
-                player.play()
-                
-                Task { @MainActor in
-                    try await Task.sleep(for: .seconds(7))
-                    showSparkle.toggle()
-                }
-                
+        VStack {
+            Text("Congratulations")
+                .font(.title)
+                .fontWeight(.bold)
+                .foregroundStyle(.accent)
+            Text("Check in completed!")
+                .foregroundStyle(.accent)
+                .font(.headline)
+            
+            VortexView(createSparkle()) {
+                Circle()
+                    .fill(.white)
+                    .frame(width: 16)
+                    .tag("circle")
             }
-            .ignoresSafeArea(.all)
-            .statusBarHidden()
-            .rotationEffect(.degrees(-90))
-            .background(.black)
-            .overlay(alignment: .top) {
-                VStack {
-                    Text("Congratulations")
-                    Text("Check in completed!")
+            .edgesIgnoringSafeArea(.all)
+            
+        }
+        .background(.black)
+        .toolbar {
+            ToolbarItem(placement: .topBarTrailing) {
+                Button {
+                    dismiss()
+                } label: {
+                    Image(systemName: "x.circle.fill")
                 }
-                .font(.largeTitle)
-                .fontWeight(.black)
-                .foregroundStyle(Color.neonMagenta)
             }
+        }
+    }
+    
+    func createSparkle() -> VortexSystem {
+        let system = VortexSystem(tags: ["circle"])
+        system.birthRate = 800
+        system.emissionDuration = 0.5
+        system.idleDuration = 0.5
+        system.lifespan = 1.5
+        system.speed = 1.25
+        system.speedVariation = 0.2
+        system.angle = .degrees(800)
+        system.angleRange = .degrees(5)
+        system.acceleration = [0, 3]
+        system.dampingFactor = 4
+        system.colors = .ramp(.white, .yellow, .yellow.opacity(0))
+        system.size = 0.1
+        system.sizeVariation = 0.1
+        system.stretchFactor = 8
+        system.shape = .ellipse(radius: 5)
+        return system
     }
 }
 
-
+#Preview {
+    SparkleRing()
+}
 
 

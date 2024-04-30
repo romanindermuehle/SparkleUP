@@ -15,6 +15,7 @@ struct WelcomeView: View {
                 .padding()
             
             Text("Here to help you become aware of your mood, gain positive energy and increase your experience in life.")
+                .foregroundStyle(.secondary)
                 .multilineTextAlignment(.center)
                 .padding()
             

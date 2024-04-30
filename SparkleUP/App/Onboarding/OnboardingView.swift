@@ -13,35 +13,35 @@ struct OnboardingView: View {
     
     var body: some View {
         NavigationStack {
-            ForEach(OnboardingScreen.allCases, id: \.self) { screen in
-                if screen == currentScreen {
-                    screen.destination
+            VStack {
+                ForEach(OnboardingScreen.allCases, id: \.self) { screen in
+                    if screen == currentScreen {
+                        screen.destination
+                    }
                 }
-            }
-            .toolbar {
                 
-                ToolbarItem(placement: .bottomBar) {
-                    if currentScreen == .welcome {
-                        Button {
-                            withAnimation(Animation.snappy) {
-                                currentScreen = .createUser
-                            }
-                        } label: {
-                            Text("Continue")
-                                .frame(width: 250, height: 50)
-                                .font(.title2)
-                                .fontWeight(.bold)
-                                .background(Color.accentColor)
-                                .foregroundStyle(.white)
-                                .clipShape(RoundedRectangle(cornerRadius: 15))
-                                .padding()
+                Spacer()
+                
+                if currentScreen == .welcome {
+                    Button {
+                        withAnimation(Animation.snappy) {
+                            currentScreen = .createUser
                         }
-                        .padding(.bottom)
+                    } label: {
+                        Text("Continue")
+                        #if os(iOS)
+                            .frame(width: 250, height: 50)
+                            .fontWeight(.semibold)
+                            .background(.accent)
+                            .foregroundStyle(.white)
+                            .clipShape(Capsule())
+                        #endif
                     }
                 }
             }
+            .padding(.bottom, 20)
         }
-     
+        
     }
 }
 

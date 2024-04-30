@@ -12,7 +12,6 @@ struct QuoteTip: Tip {
     
     var title: Text {
         Text("Swipe left")
-            .foregroundStyle(Color.accentColor)
     }
     
     var message: Text? {

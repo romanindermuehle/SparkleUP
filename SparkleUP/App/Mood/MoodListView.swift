@@ -44,7 +44,7 @@ struct MoodListView: View {
                                     Text("\(mood.moodLevel * 100, specifier: "%.0f")")
                                 }
                                 .gaugeStyle(.accessoryCircular)
-                                .tint(Gradient(colors: [.darkMagenta.opacity(0.25), .darkMagenta.opacity(0.5), .lightMagenta, .darkMagenta, .darkerMagenta]))
+                                .tint(Gradient(colors: [.red, .orange, .yellow, .green]))
                                 
                                 VStack(alignment: .leading) {
                                     Text("\(getWord(getColor(mood.moodLevel)))")
@@ -66,7 +66,7 @@ struct MoodListView: View {
                 }
             }
         }
-        .navigationTitle("Your Mood")
+        .navigationTitle("Your Moods")
         .navigationDestination(for: Mood.self) { mood in
             MoodModifyView(mood: .constant(mood), moodLevel: mood.moodLevel, isEditing: true)
         }
@@ -74,11 +74,12 @@ struct MoodListView: View {
             MoodModifyView(mood: .constant(nil), moodLevel: 0.0, isEditing: false)
         }
         .toolbar(.hidden, for: .tabBar)
-        .overlay(alignment: .bottom) {
-            NavigationLink(value: true) {
-                PlusButton()
+        .toolbar {
+            ToolbarItem(placement: .topBarTrailing) {
+                NavigationLink(value: true) {
+                    Image(systemName: "plus")
+                }
             }
-            .padding(.bottom)
         }
     }
 }

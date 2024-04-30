@@ -24,9 +24,11 @@ struct InformationDetailView: View {
             VStack(alignment: .leading) {
                 Text(title)
                     .font(.headline)
+                    .foregroundStyle(.primary)
                 
                 Text(subTitle)
                     .font(.body)
+                    .foregroundStyle(.secondary)
                     .fixedSize(horizontal: false, vertical: true)
             }
         }

@@ -11,18 +11,22 @@ import SwiftData
 struct QuoteView: View {
     @Query var days: [Day]
     @Query(filter: #Predicate<Quote> { quote in
-        quote.isFavorite
+        quote.isFavorite && !quote.alreadySeen
     }) var quotes: [Quote]
+    @Query(filter: #Predicate<Quote> { quote in
+        quote.isFavorite
+    }) var quotesFav: [Quote]
     
     @State var showAddQuote = false
+    @State var randomQuote: Quote?
     
     var body: some View {
-        VStack {
+        VStack(alignment: .center) {
             if quotes.isEmpty {
                 ContentUnavailableView {
-                    Label("No quotes chosen yet", systemImage: "quote.bubble")
+                    Label("No favorite quotes", systemImage: "quote.bubble")
                 } description: {
-                    Text("Suggested quotes are available. If you want to add them, mark them as favorites.")
+                    Text("Suggested quotes are available. First, favorite a quote so it'll show up here.")
                 } actions: {
                     Button() {
                         showAddQuote.toggle()
@@ -34,21 +38,11 @@ struct QuoteView: View {
                     .buttonStyle(.borderedProminent)
                 }
             } else {
-                ScrollView(.horizontal) {
-                    LazyHStack {
-                        ForEach(quotes) { quote in
-                            Card(quote: quote.quote, author: quote.author, image: quote.image)
-                                .containerRelativeFrame(.horizontal)
-                                .scrollTransition(axis: .horizontal) { content, phase in
-                                    content
-                                        .rotation3DEffect(.degrees(phase.value * -30.0), axis: (x: phase.value, y: 1, z: 0))
-                                        .scaleEffect(x: phase.isIdentity ? 1 : 0.8, y: phase.isIdentity ? 1 : 0.8)
-                                }
-                        }
-                    }
-                    .scrollTargetLayout()
+                
+                if let randomQuote {
+                    Card(quote: randomQuote.quote, author: randomQuote.author, image: randomQuote.image)
                 }
-                .scrollTargetBehavior(.viewAligned)
+                
             }
         }
         .toolbar {
@@ -67,6 +61,18 @@ struct QuoteView: View {
         }
         .toolbar(.hidden, for: .tabBar)
         .onAppear {
+            print(randomQuote?.author ?? "")
+            
+            if let day = days.last {
+                selectNewQuote(day: day)
+                if day.QuoteOfTheDay == nil {
+                    randomQuote?.shownAtDay = day
+                    day.QuoteOfTheDay = randomQuote
+                } else {
+                    randomQuote = day.QuoteOfTheDay
+                }
+            }
+            
             if let day = days.last {
                 if day.tasksDone.contains(where: { $0 == "quoteDone" }) {
                     return
@@ -81,9 +87,37 @@ struct QuoteView: View {
                 }
             }
         }
-        .navigationTitle("Your inspirational Quotes")
+        .navigationTitle("Your daily Quote")
         .scrollIndicators(.hidden)
         .contentMargins(20)
+    }
+    
+    func selectNewQuote(day: Day) {
+        let currentDate = Date()
+        
+        let isExpired = day.startedAt.formatted(date: .abbreviated, time: .omitted) != currentDate.formatted(date: .abbreviated, time: .omitted)
+        
+        print("currentDate:\(currentDate.formatted(date: .abbreviated, time: .omitted))")
+        print("startedAt:\(day.startedAt.formatted(date: .abbreviated, time: .omitted))")
+        
+        if isExpired || day.QuoteOfTheDay == nil {
+            if quotes.count > 0 {
+                randomQuote = quotes.randomElement()
+                randomQuote?.alreadySeen = true
+                print("Quotes: \(quotes.count)")
+            } else if quotes.count == 0 {
+                quotesFav.forEach { quote in
+                    quote.alreadySeen = false
+                    randomQuote = quotes.randomElement()
+                    print("Quotes: \(quotes.count)")
+                }
+            } else {
+                return
+            }
+            print(days.count)
+        } else {
+            print("\(isExpired)")
+        }
     }
 }
 

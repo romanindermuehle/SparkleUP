@@ -12,7 +12,6 @@ struct BatteryTip: Tip {
     
     var title: Text {
         Text("Self awareness")
-            .foregroundStyle(Color.accentColor)
     }
     
     var message: Text? {

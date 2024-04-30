@@ -23,6 +23,8 @@ struct MoodModifyView: View {
     var batteryTip = BatteryTip()
     var isEditing: Bool
     
+    @State private var showFirework: Bool = false
+    
     @State private var current = 0.0
     @State private var minimum = 0.0
     @State private var maximum = 100.0
@@ -32,6 +34,7 @@ struct MoodModifyView: View {
             Text("\(moodLevel * 100, specifier: "%.0f")%")
                 .font(.system(size: 56, weight: .black))
                 .foregroundStyle(getColor(moodLevel))
+           
             
             MoodBarometer(moodLevel: $moodLevel, levelColor: moodLevel)
                 .frame(width: 250, height: 90)
@@ -39,7 +42,9 @@ struct MoodModifyView: View {
             
             TipView(batteryTip, arrowEdge: .top)
                 .padding()
+                #if os(iOS)
                 .tipBackground(Color.accentColor.opacity(0.1))
+                #endif
             
             Spacer()
             
@@ -49,38 +54,27 @@ struct MoodModifyView: View {
                 .foregroundStyle(getColor(moodLevel))
             
             Slider(value: $moodLevel, in: 0...1)
+                .tint(getColor(moodLevel))
                 .disabled(isEditing)
+                .padding()
         }
         .padding()
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
-                Button("Save") {
-                    saveMood()
-                }
-                .disabled(isEditing || moodLevel <= 0.01)
-                .fontWeight(.bold)
-            }
-            
-            ToolbarItem(placement: .bottomBar) {
                 Button {
                     saveMood()
                 } label: {
                     Text("Save")
-                        .frame(width: 250, height: 50)
-                        .font(.title2)
-                        .fontWeight(.bold)
-                        .background(Color.accentColor)
-                        .foregroundStyle(.white)
-                        .clipShape(RoundedRectangle(cornerRadius: 15))
-                        .padding()
-                    
                 }
-                .padding(.bottom)
                 .disabled(isEditing || moodLevel <= 0.01)
+                .fontWeight(.bold)
             }
         }
         .navigationTitle("Choose your Mood Level")
         .navigationBarTitleDisplayMode(.inline)
+        .fullScreenCover(isPresented: $showFirework) {
+            Firework()
+        }
     }
     
     func saveMood() {
@@ -91,7 +85,14 @@ struct MoodModifyView: View {
             context.insert(new)
         }
         markMoodDone()
-        dismiss()
+        if moodLevel == 1 {
+            showFirework.toggle()
+            DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(10)) {
+                dismiss()
+            }
+        } else {
+            dismiss()
+        }
     }
     
     func markMoodDone() {

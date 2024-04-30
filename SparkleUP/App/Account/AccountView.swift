@@ -12,6 +12,8 @@ import PhotosUI
 struct AccountView: View {
     @Query var users: [User]
     
+    @State var showSparkle: Bool = false
+    
     var body: some View {
         NavigationStack {
             if let user = users.first {
@@ -37,6 +39,14 @@ struct AccountView: View {
                     .frame(maxWidth: .infinity, alignment: .center)
                     .listRowBackground(Color.clear)
                     .listRowSeparator(.hidden)
+                    
+                    Section {
+                        Button {
+                            showSparkle.toggle()
+                        } label: {
+                            Label("Show sparkle(For DEBUG)", systemImage: "sparkles")
+                        }
+                    }
                 }
                 .navigationTitle("Account")
                 .toolbar {
@@ -46,6 +56,11 @@ struct AccountView: View {
                         } label: {
                             Image(systemName: "pencil")
                         }
+                    }
+                }
+                .fullScreenCover(isPresented: $showSparkle) {
+                    NavigationStack {
+                        SparkleRing()
                     }
                 }
             }

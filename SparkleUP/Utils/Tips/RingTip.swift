@@ -12,11 +12,10 @@ struct RingTip: Tip {
     
     var title: Text {
         Text("Complete your daily tasks")
-            .foregroundStyle(Color.accentColor)
     }
     
     var message: Text? {
-        Text("Set your daily mood and gratitude and read some quotes to make the ring sparkle.")
+        Text("Set your daily mood, write down what you're grateful for, and read the daily quote to make the ring sparkle.")
     }
     
     var image: Image? {

@@ -12,7 +12,7 @@ struct StatisticsView: View {
     @Query var days: [Day]
     @Query var moods: [Mood]
     
-        
+    
     private var minimum = 0.0
     private var maximum = 100.0
     
@@ -27,12 +27,9 @@ struct StatisticsView: View {
                     LazyVGrid(columns: columns, spacing: 20) {
                         ForEach(days) { day in
                             VStack(spacing: 10) {
-                                ZStack(alignment: .center) {
-                                    Text("\(day.percentage * 100, specifier: "%.0f")%")
-                                        .font(.headline)
-                                    ProgressRing(day: day, ringSizeHeight: 80, ringSizeWidth: 80, ringThickness: 10.0, ringHeight: 10.0, ringWidth: 10.0)
-                                }
-                           
+                                ProgressRing(day: day, ringSizeHeight: 80, ringSizeWidth: 80, ringThickness: 10.0, ringHeight: 10.0, ringWidth: 10.0, fontSize: 18)
+                                
+                                
                                 Text(String(day.startedAt.formatted(date: .abbreviated, time: .omitted)))
                                     .font(.caption)
                             }
@@ -58,7 +55,7 @@ struct StatisticsView: View {
                                         Text("\(mood.moodLevel * 100, specifier: "%.0f")")
                                     }
                                     .gaugeStyle(.accessoryCircular)
-                                    .tint(Gradient(colors: [.darkMagenta.opacity(0.25), .darkMagenta.opacity(0.5), .lightMagenta, .darkMagenta, .darkerMagenta]))
+                                    .tint(Gradient(colors: [.red, .orange, .yellow, .green]))
                                     .scaleEffect(1.2)
                                     
                                     Text(String(mood.addedAt.formatted(date: .abbreviated, time: .omitted)))

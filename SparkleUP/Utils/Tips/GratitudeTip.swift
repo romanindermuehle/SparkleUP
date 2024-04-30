@@ -12,7 +12,6 @@ struct GratitudeTip: Tip {
     
     var title: Text {
         Text("Stick with it")
-            .foregroundStyle(Color.accentColor)
     }
     
     var message: Text? {

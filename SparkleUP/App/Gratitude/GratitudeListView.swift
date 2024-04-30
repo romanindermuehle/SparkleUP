@@ -49,7 +49,7 @@ struct GratitudeListView: View {
                 }
             }
         }
-        .navigationTitle("Your Gratitude")
+        .navigationTitle("Your Gratitudes")
         .navigationDestination(for: Gratitude.self) { gratitude in
             GratitudeModifyView(gratitude: .constant(gratitude), gratitudeValue1: gratitude.gratitudeValue1, gratitudeValue2: gratitude.gratitudeValue2, gratitudeValue3: gratitude.gratitudeValue3, recordedInSequence: gratitude.recordedInSequence, isEditing: true)
             
@@ -62,11 +62,12 @@ struct GratitudeListView: View {
             }
         }
         .toolbar(.hidden, for: .tabBar)
-        .overlay(alignment: .bottom) {
-            NavigationLink(value: true) {
-                PlusButton()
+        .toolbar {
+            ToolbarItem(placement: .topBarTrailing) {
+                NavigationLink(value: true) {
+                    Image(systemName: "plus")
+                }
             }
-            .padding(.bottom)
         }
     }
 }

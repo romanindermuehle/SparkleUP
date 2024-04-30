@@ -50,11 +50,12 @@
 		CB6D395A2BA7711F0098AE0E /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6D392C2BA7711F0098AE0E /* Card.swift */; };
 		CB6D395B2BA7711F0098AE0E /* HalfCircleShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6D392D2BA7711F0098AE0E /* HalfCircleShape.swift */; };
 		CB6D395C2BA7711F0098AE0E /* MoodBarometer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6D392E2BA7711F0098AE0E /* MoodBarometer.swift */; };
-		CB6D395D2BA7711F0098AE0E /* PlusButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6D392F2BA7711F0098AE0E /* PlusButton.swift */; };
 		CB6D395E2BA7711F0098AE0E /* ProgressRing.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6D39302BA7711F0098AE0E /* ProgressRing.swift */; };
 		CB6D395F2BA7711F0098AE0E /* SparkleRing.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6D39312BA7711F0098AE0E /* SparkleRing.swift */; };
 		CB6D39602BA7711F0098AE0E /* StatisticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6D39342BA7711F0098AE0E /* StatisticsView.swift */; };
 		CB6D39612BA7711F0098AE0E /* TodayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6D39362BA7711F0098AE0E /* TodayView.swift */; };
+		CB7223C62BE198F500139CDA /* Firework.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7223C52BE198F500139CDA /* Firework.swift */; };
+		CBE01E532BCC4BD8006250AD /* Vortex in Frameworks */ = {isa = PBXBuildFile; productRef = CBE01E522BCC4BD8006250AD /* Vortex */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -122,11 +123,11 @@
 		CB6D392C2BA7711F0098AE0E /* Card.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		CB6D392D2BA7711F0098AE0E /* HalfCircleShape.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HalfCircleShape.swift; sourceTree = "<group>"; };
 		CB6D392E2BA7711F0098AE0E /* MoodBarometer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoodBarometer.swift; sourceTree = "<group>"; };
-		CB6D392F2BA7711F0098AE0E /* PlusButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlusButton.swift; sourceTree = "<group>"; };
 		CB6D39302BA7711F0098AE0E /* ProgressRing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressRing.swift; sourceTree = "<group>"; };
 		CB6D39312BA7711F0098AE0E /* SparkleRing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SparkleRing.swift; sourceTree = "<group>"; };
 		CB6D39342BA7711F0098AE0E /* StatisticsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatisticsView.swift; sourceTree = "<group>"; };
 		CB6D39362BA7711F0098AE0E /* TodayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodayView.swift; sourceTree = "<group>"; };
+		CB7223C52BE198F500139CDA /* Firework.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Firework.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +135,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CBE01E532BCC4BD8006250AD /* Vortex in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -368,9 +370,9 @@
 				CB6D392C2BA7711F0098AE0E /* Card.swift */,
 				CB6D392D2BA7711F0098AE0E /* HalfCircleShape.swift */,
 				CB6D392E2BA7711F0098AE0E /* MoodBarometer.swift */,
-				CB6D392F2BA7711F0098AE0E /* PlusButton.swift */,
 				CB6D39302BA7711F0098AE0E /* ProgressRing.swift */,
 				CB6D39312BA7711F0098AE0E /* SparkleRing.swift */,
+				CB7223C52BE198F500139CDA /* Firework.swift */,
 			);
 			path = UIComponents;
 			sourceTree = "<group>";
@@ -444,6 +446,9 @@
 			dependencies = (
 			);
 			name = SparkleUP;
+			packageProductDependencies = (
+				CBE01E522BCC4BD8006250AD /* Vortex */,
+			);
 			productName = SparkleUP;
 			productReference = CB6D38CC2BA7706D0098AE0E /* SparkleUP.app */;
 			productType = "com.apple.product-type.application";
@@ -516,6 +521,9 @@
 				Base,
 			);
 			mainGroup = CB6D38C32BA7706D0098AE0E;
+			packageReferences = (
+				CBE01E512BCC4BD8006250AD /* XCRemoteSwiftPackageReference "Vortex" */,
+			);
 			productRefGroup = CB6D38CD2BA7706D0098AE0E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -571,11 +579,11 @@
 				CB6D38D22BA7706D0098AE0E /* ContentView.swift in Sources */,
 				CB6D395F2BA7711F0098AE0E /* SparkleRing.swift in Sources */,
 				CB6D39492BA7711F0098AE0E /* WelcomeHeader.swift in Sources */,
+				CB7223C62BE198F500139CDA /* Firework.swift in Sources */,
 				CB6D39402BA7711F0098AE0E /* CardData.swift in Sources */,
 				CB6D393E2BA7711F0098AE0E /* GratitudeListView.swift in Sources */,
 				CB6D393F2BA7711F0098AE0E /* GratitudeModifyView.swift in Sources */,
 				CB6D39552BA7711F0098AE0E /* MoodLevel.swift in Sources */,
-				CB6D395D2BA7711F0098AE0E /* PlusButton.swift in Sources */,
 				CB6D38D02BA7706D0098AE0E /* SparkleUPApp.swift in Sources */,
 				CB6D39612BA7711F0098AE0E /* TodayView.swift in Sources */,
 				CB6D393D2BA7711F0098AE0E /* AccountView.swift in Sources */,
@@ -756,6 +764,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = SparkleUP/SparkleUP.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -782,10 +791,11 @@
 				PRODUCT_BUNDLE_IDENTIFIER = ch.romanindermuehle.SparkleUP;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = "1,2,7";
 			};
 			name = Debug;
 		};
@@ -794,6 +804,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = SparkleUP/SparkleUP.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -820,10 +831,11 @@
 				PRODUCT_BUNDLE_IDENTIFIER = ch.romanindermuehle.SparkleUP;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = "1,2,7";
 			};
 			name = Release;
 		};
@@ -957,6 +969,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		CBE01E512BCC4BD8006250AD /* XCRemoteSwiftPackageReference "Vortex" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/twostraws/Vortex";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		CBE01E522BCC4BD8006250AD /* Vortex */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CBE01E512BCC4BD8006250AD /* XCRemoteSwiftPackageReference "Vortex" */;
+			productName = Vortex;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = CB6D38C42BA7706D0098AE0E /* Project object */;
 }

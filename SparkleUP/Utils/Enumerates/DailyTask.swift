@@ -21,7 +21,7 @@ extension DailyTask {
         case .mood:
             Label("Define your mood of the day", systemImage: "seal")
         case .quote:
-            Label("Choose your favorite quote", systemImage: "seal")
+            Label("View your daily quote", systemImage: "seal")
         case .gratitude:
             Label("Write your daily gratitude", systemImage: "seal")
         }
@@ -34,7 +34,7 @@ extension DailyTask {
         case .mood:
             Label("Define your mood of the day", systemImage: "checkmark.seal.fill")
         case .quote:
-            Label("Choose your favorite quote", systemImage: "checkmark.seal.fill")
+            Label("View your daily quote", systemImage: "checkmark.seal.fill")
         case .gratitude:
             Label("Write your daily gratitude", systemImage: "checkmark.seal.fill")
         }
