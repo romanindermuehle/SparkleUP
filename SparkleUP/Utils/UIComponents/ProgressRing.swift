@@ -28,6 +28,7 @@ struct ProgressRing: View {
         ZStack {
             Text("\(day.percentage * 100, specifier: "%.0f")%")
                 .font(.system(size: fontSize, weight: .bold))
+                .foregroundStyle(.accent)
             ZStack {
                 Circle()
                     .stroke(darkColor.opacity(0.2), lineWidth: ringThickness)
