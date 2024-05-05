@@ -61,12 +61,7 @@ struct TodayView: View {
                             showSparkle.toggle()
                         }
                         day.sparkleSeen = true
-                        print(showSparkle)
-                    } else {
-                        print(day.percentage)
-                        print(day.tasksDone.count)
                     }
-                    print("\(day.startedAt)")
                     
                     checkDayOver(startedAt: day.startedAt)
                 }
@@ -85,20 +80,22 @@ struct TodayView: View {
     func checkDayOver(startedAt: Date) {
         let currentDate = Date()
         
-        let isExpired = startedAt.formatted(date: .abbreviated, time: .omitted) != currentDate.formatted(date: .abbreviated, time: .omitted)
+        let isTomorrow = Calendar.current.isDateInTomorrow(startedAt)
+        guard let dayDiffernce = Calendar.current.dateComponents([.day], from: currentDate, to: startedAt).day else { return }
         
-        print("currentDate:\(currentDate.formatted(date: .abbreviated, time: .omitted))")
-        print("startedAt:\(startedAt.formatted(date: .abbreviated, time: .omitted))")
-        
-        if isExpired {
-            newDay()
-            print(days.count)
+        if isTomorrow {
+            createDay()
+        } else if dayDiffernce >= 2 {
+            print(dayDiffernce)
+            for _ in (0...dayDiffernce) {
+                createDay()
+            }
         } else {
-            print("\(isExpired)")
+            return
         }
     }
     
-    func newDay() {
+    func createDay() {
         context.insert(Day.init())
     }
 }

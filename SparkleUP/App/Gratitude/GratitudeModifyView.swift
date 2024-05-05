@@ -21,7 +21,6 @@ struct GratitudeModifyView: View {
     @State var recordedInSequence: Double
     
     var isEditing: Bool
-    let currentDate = Date()
     var minimum = 0.0
     var maximum = 90.0
     
@@ -118,9 +117,7 @@ struct GratitudeModifyView: View {
     func checkSequence() {
         if let day = days.last {
             if day.tasksDone.contains(where: { $0 == "gratitudeDone" }) {
-                if day.startedAt.formatted(date: .abbreviated, time: .omitted) == currentDate.formatted(date: .abbreviated, time: .omitted) {
-                    return
-                } else {
+                if Calendar.current.isDateInTomorrow(day.startedAt) {
                     recordedInSequence += 1.0
                     print(recordedInSequence)
                 }
