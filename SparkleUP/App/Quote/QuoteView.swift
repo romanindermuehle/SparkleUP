@@ -38,7 +38,6 @@ struct QuoteView: View {
                     .buttonStyle(.borderedProminent)
                 }
             } else {
-                
                 if let randomQuote {
                     Card(quote: randomQuote.quote, author: randomQuote.author, image: randomQuote.image)
                 }
@@ -54,20 +53,24 @@ struct QuoteView: View {
                 }
             }
         }
-        .sheet(isPresented: $showAddQuote) {
+        .sheet(isPresented: $showAddQuote, onDismiss: {
+            if let day = days.last {
+                if day.QuoteOfTheDay == nil {
+                    selectNewQuote(day: day)
+                } else {
+                    randomQuote = day.QuoteOfTheDay
+                }
+            }
+        }) {
             NavigationStack {
                 QuoteAddView()
             }
         }
         .toolbar(.hidden, for: .tabBar)
         .onAppear {
-            print(randomQuote?.author ?? "")
-            
             if let day = days.last {
-                selectNewQuote(day: day)
                 if day.QuoteOfTheDay == nil {
-                    randomQuote?.shownAtDay = day
-                    day.QuoteOfTheDay = randomQuote
+                    selectNewQuote(day: day)
                 } else {
                     randomQuote = day.QuoteOfTheDay
                 }
@@ -93,30 +96,22 @@ struct QuoteView: View {
     }
     
     func selectNewQuote(day: Day) {
-        let currentDate = Date()
+        let isTomorrow = Calendar.current.isDateInTomorrow(day.startedAt)
         
-        let isExpired = day.startedAt.formatted(date: .abbreviated, time: .omitted) != currentDate.formatted(date: .abbreviated, time: .omitted)
-        
-        print("currentDate:\(currentDate.formatted(date: .abbreviated, time: .omitted))")
-        print("startedAt:\(day.startedAt.formatted(date: .abbreviated, time: .omitted))")
-        
-        if isExpired || day.QuoteOfTheDay == nil {
+        if isTomorrow || day.QuoteOfTheDay == nil {
             if quotes.count > 0 {
-                randomQuote = quotes.randomElement()
                 randomQuote?.alreadySeen = true
-                print("Quotes: \(quotes.count)")
+                randomQuote = quotes.randomElement()
+                randomQuote?.shownAtDay = day
+                day.QuoteOfTheDay = randomQuote
             } else if quotes.count == 0 {
                 quotesFav.forEach { quote in
                     quote.alreadySeen = false
-                    randomQuote = quotes.randomElement()
-                    print("Quotes: \(quotes.count)")
                 }
-            } else {
-                return
+                randomQuote = quotes.randomElement()
+                randomQuote?.shownAtDay = day
+                day.QuoteOfTheDay = randomQuote
             }
-            print(days.count)
-        } else {
-            print("\(isExpired)")
         }
     }
 }
