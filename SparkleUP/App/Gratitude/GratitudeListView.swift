@@ -9,13 +9,12 @@ import SwiftUI
 import SwiftData
 
 struct GratitudeListView: View {
-    @Query(sort: \Gratitude.createdAt, order: .reverse) var sortedGratitudes: [Gratitude]
-    @Query var nonSortedGratitudes: [Gratitude]
+    @Query(sort: \Gratitude.createdAt, order: .reverse) var gratitudes: [Gratitude]
     @Environment(\.modelContext) var context
     
     var body: some View {
         VStack {
-            if sortedGratitudes.isEmpty {
+            if gratitudes.isEmpty {
                 ContentUnavailableView {
                     Label("No recorded gratitude", systemImage: "square.and.pencil")
                 } description: {
@@ -30,7 +29,7 @@ struct GratitudeListView: View {
                 }
             } else {
                 List {
-                    ForEach(sortedGratitudes, id: \.self) { gratitude in
+                    ForEach(gratitudes, id: \.self) { gratitude in
                         NavigationLink(value: gratitude) {
                             VStack(alignment: .leading) {
                                 Text(gratitude.gratitudeValue1)
@@ -55,7 +54,7 @@ struct GratitudeListView: View {
             
         }
         .navigationDestination(for: Bool.self) { _ in
-            if let previousGartitude = nonSortedGratitudes.last {
+            if let previousGartitude = gratitudes.first {
                 GratitudeModifyView(gratitude: .constant(nil), gratitudeValue1: "", gratitudeValue2: "", gratitudeValue3: "", recordedInSequence: previousGartitude.recordedInSequence, isEditing: false)
             } else {
                 GratitudeModifyView(gratitude: .constant(nil), gratitudeValue1: "", gratitudeValue2: "", gratitudeValue3: "", recordedInSequence: 0.0, isEditing: false)
