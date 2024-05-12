@@ -10,7 +10,7 @@ import SwiftData
 import TipKit
 
 struct MoodModifyView: View {
-    @Query var days: [Day]
+    @Query(sort: \Day.startedAt) var days: [Day]
     @Binding var mood: Mood?
     @Environment(\.modelContext) var context
     @Environment(\.dismiss) var dismiss
@@ -39,12 +39,7 @@ struct MoodModifyView: View {
             MoodBarometer(moodLevel: $moodLevel, levelColor: moodLevel)
                 .frame(width: 250, height: 90)
                 .padding()
-            
-            TipView(batteryTip, arrowEdge: .top)
-                .padding()
-                #if os(iOS)
-                .tipBackground(Color.accentColor.opacity(0.1))
-                #endif
+                .popoverTip(batteryTip)
             
             Spacer()
             
@@ -57,6 +52,7 @@ struct MoodModifyView: View {
                 .tint(getColor(moodLevel))
                 .disabled(isEditing)
                 .padding()
+                .accessibilityIdentifier("moodSlider")
         }
         .padding()
         .toolbar {
@@ -87,7 +83,7 @@ struct MoodModifyView: View {
         markMoodDone()
         if moodLevel == 1 {
             showFirework.toggle()
-            DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(10)) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(8)) {
                 dismiss()
             }
         } else {
