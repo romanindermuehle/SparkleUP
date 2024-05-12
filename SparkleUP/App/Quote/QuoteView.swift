@@ -9,22 +9,18 @@ import SwiftUI
 import SwiftData
 
 struct QuoteView: View {
-    @Query var days: [Day]
-    @Query(filter: #Predicate<Quote> { quote in
-        quote.isFavorite && !quote.alreadySeen
-    }) var quotes: [Quote]
+    @Query(sort: \Day.startedAt) var days: [Day]
     @Query(filter: #Predicate<Quote> { quote in
         quote.isFavorite
-    }) var quotesFav: [Quote]
+    }) var quotes: [Quote]
     
     @State var showAddQuote = false
-    @State var randomQuote: Quote?
     
     var body: some View {
         VStack(alignment: .center) {
             if quotes.isEmpty {
                 ContentUnavailableView {
-                    Label("No favorite quotes", systemImage: "quote.bubble")
+                    Label("No favorited quotes", systemImage: "quote.bubble")
                 } description: {
                     Text("Suggested quotes are available. First, favorite a quote so it'll show up here.")
                 } actions: {
@@ -38,8 +34,8 @@ struct QuoteView: View {
                     .buttonStyle(.borderedProminent)
                 }
             } else {
-                if let randomQuote {
-                    Card(quote: randomQuote.quote, author: randomQuote.author, image: randomQuote.image)
+                if let quoteOfTheDay = days.last?.quoteOfTheDay {
+                    Card(quote: quoteOfTheDay.quote, author: quoteOfTheDay.author, image: quoteOfTheDay.image)
                 }
                 
             }
@@ -55,10 +51,11 @@ struct QuoteView: View {
         }
         .sheet(isPresented: $showAddQuote, onDismiss: {
             if let day = days.last {
-                if day.QuoteOfTheDay == nil {
-                    selectNewQuote(day: day)
-                } else {
-                    randomQuote = day.QuoteOfTheDay
+                if day.quoteOfTheDay == nil {
+                    if let newQuote = selectNewQuote(quotes: quotes) {
+                        newQuote.shownAtDay = day
+                        day.quoteOfTheDay = newQuote
+                    }
                 }
             }
         }) {
@@ -69,10 +66,11 @@ struct QuoteView: View {
         .toolbar(.hidden, for: .tabBar)
         .onAppear {
             if let day = days.last {
-                if day.QuoteOfTheDay == nil {
-                    selectNewQuote(day: day)
-                } else {
-                    randomQuote = day.QuoteOfTheDay
+                if day.quoteOfTheDay == nil {
+                    if let newQuote = selectNewQuote(quotes: quotes) {
+                        newQuote.shownAtDay = day
+                        day.quoteOfTheDay = newQuote
+                    }
                 }
             }
             
@@ -95,25 +93,10 @@ struct QuoteView: View {
         .contentMargins(20)
     }
     
-    func selectNewQuote(day: Day) {
-        let isTomorrow = Calendar.current.isDateInTomorrow(day.startedAt)
-        
-        if isTomorrow || day.QuoteOfTheDay == nil {
-            if quotes.count > 0 {
-                randomQuote?.alreadySeen = true
-                randomQuote = quotes.randomElement()
-                randomQuote?.shownAtDay = day
-                day.QuoteOfTheDay = randomQuote
-            } else if quotes.count == 0 {
-                quotesFav.forEach { quote in
-                    quote.alreadySeen = false
-                }
-                randomQuote = quotes.randomElement()
-                randomQuote?.shownAtDay = day
-                day.QuoteOfTheDay = randomQuote
-            }
-        }
+    func selectNewQuote(quotes: [Quote]) -> Quote? {
+        quotes.shuffled().first
     }
 }
+
 
 
