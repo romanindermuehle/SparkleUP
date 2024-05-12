@@ -77,12 +77,7 @@ struct TodayView: View {
                     
                     let daysToInsert = checkDayOver(startedAt: day.startedAt)
                     
-                    guard let current = Calendar.current.date(byAdding: .day, value: 1, to: Date()) else {return}
-                    
-                    let futureDay = [Day(startedAt: current)]
-                            
-                    
-                    createDay(days: futureDay)
+                    createDay(days: daysToInsert)
                 }
                 .navigationDestination(for: DailyTask.self) { dailyTask in
                     dailyTask.destination
