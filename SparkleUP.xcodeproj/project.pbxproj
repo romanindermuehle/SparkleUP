@@ -55,7 +55,7 @@
 		CB6D39602BA7711F0098AE0E /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6D39342BA7711F0098AE0E /* ProgressView.swift */; };
 		CB6D39612BA7711F0098AE0E /* TodayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6D39362BA7711F0098AE0E /* TodayView.swift */; };
 		CB7223C62BE198F500139CDA /* Firework.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7223C52BE198F500139CDA /* Firework.swift */; };
-		CBE01E532BCC4BD8006250AD /* Vortex in Frameworks */ = {isa = PBXBuildFile; productRef = CBE01E522BCC4BD8006250AD /* Vortex */; };
+		CBDD3A7A2BF1444B00E776A5 /* Vortex in Frameworks */ = {isa = PBXBuildFile; productRef = CBDD3A792BF1444B00E776A5 /* Vortex */; };
 		CBE2A1342BEE3B690052B9D7 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE2A1332BEE3B690052B9D7 /* Date.swift */; };
 		CBE2A1362BEE57240052B9D7 /* TodayViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE2A1352BEE57240052B9D7 /* TodayViewTests.swift */; };
 		CBE2A1382BEE57410052B9D7 /* QuoteViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE2A1372BEE57410052B9D7 /* QuoteViewTests.swift */; };
@@ -144,7 +144,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CBE01E532BCC4BD8006250AD /* Vortex in Frameworks */,
+				CBDD3A7A2BF1444B00E776A5 /* Vortex in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -453,7 +453,7 @@
 			);
 			name = SparkleUP;
 			packageProductDependencies = (
-				CBE01E522BCC4BD8006250AD /* Vortex */,
+				CBDD3A792BF1444B00E776A5 /* Vortex */,
 			);
 			productName = SparkleUP;
 			productReference = CB6D38CC2BA7706D0098AE0E /* SparkleUP.app */;
@@ -528,7 +528,7 @@
 			);
 			mainGroup = CB6D38C32BA7706D0098AE0E;
 			packageReferences = (
-				CBE01E512BCC4BD8006250AD /* XCRemoteSwiftPackageReference "Vortex" */,
+				CBDD3A782BF1444B00E776A5 /* XCRemoteSwiftPackageReference "Vortex" */,
 			);
 			productRefGroup = CB6D38CD2BA7706D0098AE0E /* Products */;
 			projectDirPath = "";
@@ -995,20 +995,20 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		CBE01E512BCC4BD8006250AD /* XCRemoteSwiftPackageReference "Vortex" */ = {
+		CBDD3A782BF1444B00E776A5 /* XCRemoteSwiftPackageReference "Vortex" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/twostraws/Vortex";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.0;
+				minimumVersion = 1.0.1;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		CBE01E522BCC4BD8006250AD /* Vortex */ = {
+		CBDD3A792BF1444B00E776A5 /* Vortex */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = CBE01E512BCC4BD8006250AD /* XCRemoteSwiftPackageReference "Vortex" */;
+			package = CBDD3A782BF1444B00E776A5 /* XCRemoteSwiftPackageReference "Vortex" */;
 			productName = Vortex;
 		};
 /* End XCSwiftPackageProductDependency section */
