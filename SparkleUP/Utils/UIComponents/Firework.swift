@@ -11,6 +11,11 @@ import Vortex
 struct Firework: View {
     var body: some View {
         VStack {
+            Text("You are Fulfilled")
+                .foregroundStyle(.lightMagenta)
+                .font(.largeTitle)
+                .fontWeight(.bold)
+            
             VortexView(createFirework()) {
                 Circle()
                     .fill(.white)
@@ -19,6 +24,7 @@ struct Firework: View {
             }
             .edgesIgnoringSafeArea(.all)
         }
+        .padding()
         .background(.black)
     }
     
