@@ -10,8 +10,8 @@ import SwiftUI
 
 enum AppScreen: CaseIterable, Identifiable {
     case today
-    case statistics
-    case account
+    case progress
+    case settings
     
     var id: AppScreen { self }
     
@@ -24,10 +24,10 @@ extension AppScreen {
         switch self {
         case .today:
             Label("Today", systemImage: "sun.max")
-        case .statistics:
-            Label("Statistics", systemImage: "chart.bar.fill")
-        case .account:
-            Label("Account", systemImage: "person.crop.circle.fill")
+        case .progress:
+            Label("Progress", systemImage: "chart.bar.fill")
+        case .settings:
+            Label("Settings", systemImage: "gear")
         }
     }
     
@@ -36,10 +36,10 @@ extension AppScreen {
         switch self {
         case .today:
             TodayView()
-        case .statistics:
-            StatisticsView()
-        case .account:
-            AccountView()
+        case .progress:
+            ProgressView()
+        case .settings:
+            SettingsView()
         }
     }
 }
