@@ -18,7 +18,7 @@ final class TodayViewTests: XCTestCase {
         let days = todayView.checkDayOver(startedAt: startedAt, current: currentDate)
 
         XCTAssertEqual(days.count, 1)
-        XCTAssertEqual(days.first?.startedAt.formatted(date: .numeric, time: .omitted), "10/5/2024")
+        XCTAssertEqual(days.first?.startedAt.formatted(date: .numeric, time: .omitted), "5/10/2024")
     }
     
     func testFiveDayDiffernce() {
@@ -30,8 +30,8 @@ final class TodayViewTests: XCTestCase {
         let days = todayView.checkDayOver(startedAt: startedAt, current: currentDate)
         
         XCTAssertEqual(days.count, 5)
-        XCTAssertFalse(days.last?.startedAt.formatted(date: .numeric, time: .omitted) == "5.5.2024")
-        XCTAssertTrue(days.last?.startedAt.formatted(date: .numeric, time: .omitted) == "6.5.2024")
+        XCTAssertFalse(days.last?.startedAt.formatted(date: .numeric, time: .omitted) == "5/5/2024")
+        XCTAssertTrue(days.last?.startedAt.formatted(date: .numeric, time: .omitted) == "5/6/2024")
     }
     
     func testFiveDaysInFutureDiffernce() {
@@ -43,8 +43,8 @@ final class TodayViewTests: XCTestCase {
         let days = todayView.checkDayOver(startedAt: startedAt, current: currentDate)
         
         XCTAssertEqual(days.count, 1)
-        XCTAssertFalse(days.last?.startedAt.formatted(date: .complete, time: .omitted) == "5.5.2024")
-        XCTAssertTrue(days.last?.startedAt.formatted(date: .numeric, time: .omitted) == "10.5.2024")
+        XCTAssertFalse(days.last?.startedAt.formatted(date: .complete, time: .omitted) == "5/5/2024")
+        XCTAssertTrue(days.last?.startedAt.formatted(date: .numeric, time: .omitted) == "5/10/2024")
     }
     
     func testSuccessfulCalculateDayDifference() {
@@ -88,6 +88,6 @@ final class TodayViewTests: XCTestCase {
         
         let subtractedDate = todayView.subtractDayFromDate(numberOfDays: numberOfDays, subtractFrom: currentDate)
         
-        XCTAssertFalse(subtractedDate?.formatted(date: .numeric, time: .omitted) != "15.5.2024")
+        XCTAssertFalse(subtractedDate?.formatted(date: .numeric, time: .omitted) != "5/15/2024")
     }
 }
