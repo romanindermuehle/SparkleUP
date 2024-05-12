@@ -13,15 +13,14 @@ class Quote {
     var quote: String
     var author: String
     var image: String
-    var alreadySeen: Bool
     var isFavorite: Bool
     var shownAtDay: Day?
+
     
-    init(quote: String, author: String, image: String, alreadySeen: Bool = false, isFavorite: Bool = false, shownAtDay: Day? = nil) {
+    init(quote: String, author: String, image: String, isFavorite: Bool = false, shownAtDay: Day? = nil) {
         self.quote = quote
         self.author = author
         self.image = image
-        self.alreadySeen = alreadySeen
         self.isFavorite = isFavorite
         self.shownAtDay = shownAtDay
     }
