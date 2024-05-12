@@ -8,35 +8,29 @@
 import SwiftUI
 
 struct OnboardingView: View {
-    @State private var currentScreen: OnboardingScreen = .welcome
+    @Environment(\.modelContext) var context
     
+    @AppStorage("isOnboarding") var isOnboarding: Bool?
     
     var body: some View {
         NavigationStack {
             VStack {
-                ForEach(OnboardingScreen.allCases, id: \.self) { screen in
-                    if screen == currentScreen {
-                        screen.destination
-                    }
-                }
+                WelcomeView()
                 
                 Spacer()
                 
-                if currentScreen == .welcome {
-                    Button {
-                        withAnimation(Animation.snappy) {
-                            currentScreen = .createUser
-                        }
-                    } label: {
-                        Text("Continue")
-                        #if os(iOS)
-                            .frame(width: 250, height: 50)
-                            .fontWeight(.semibold)
-                            .background(.accent)
-                            .foregroundStyle(.white)
-                            .clipShape(Capsule())
-                        #endif
-                    }
+                Button {
+                    context.insert(Day.init())
+                    isOnboarding = false
+                } label: {
+                    Text("Let's Start")
+#if os(iOS)
+                        .frame(width: 250, height: 50)
+                        .fontWeight(.semibold)
+                        .background(.accent)
+                        .foregroundStyle(.white)
+                        .clipShape(Capsule())
+#endif
                 }
             }
             .padding(.bottom, 20)

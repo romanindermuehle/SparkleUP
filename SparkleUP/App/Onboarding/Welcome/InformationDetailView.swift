@@ -18,7 +18,7 @@ struct InformationDetailView: View {
             Image(systemName: imageName)
                 .font(.system(size: 40))
                 .scaledToFit()
-                .foregroundStyle(Color.accentColor)
+                .foregroundStyle(.accent)
                 .padding()
             
             VStack(alignment: .leading) {

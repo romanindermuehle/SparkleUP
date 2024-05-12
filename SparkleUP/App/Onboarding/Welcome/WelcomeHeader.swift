@@ -12,7 +12,7 @@ struct WelcomeHeader: View {
         VStack {
             Text("Welcome to")
             Text("SparkleUP")
-                .foregroundStyle(Color.accentColor)
+                .foregroundStyle(.accent)
         }
         .font(.system(size: 36))
         .fontWeight(.black)
