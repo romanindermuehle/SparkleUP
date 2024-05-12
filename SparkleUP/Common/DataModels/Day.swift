@@ -14,13 +14,13 @@ class Day {
     var tasksDone: [String]
     var sparkleSeen: Bool
     var startedAt: Date
-    var QuoteOfTheDay: Quote?
+    var quoteOfTheDay: Quote?
     
-    init(percentage: Double = 0.0, tasksDone: [String] = [], sparkleSeen: Bool = false, startedAt: Date = .now, QuoteOfTheDay: Quote? = nil) {
+    init(percentage: Double = 0.0, tasksDone: [String] = [], sparkleSeen: Bool = false, startedAt: Date = .now, quoteOfTheDay: Quote? = nil) {
         self.percentage = percentage
         self.tasksDone = tasksDone
         self.sparkleSeen = sparkleSeen
         self.startedAt = startedAt
-        self.QuoteOfTheDay = QuoteOfTheDay
+        self.quoteOfTheDay = quoteOfTheDay
     }
 }
