@@ -132,6 +132,7 @@
 		CB6D39342BA7711F0098AE0E /* ProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
 		CB6D39362BA7711F0098AE0E /* TodayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodayView.swift; sourceTree = "<group>"; };
 		CB7223C52BE198F500139CDA /* Firework.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Firework.swift; sourceTree = "<group>"; };
+		CBDD3A772BF132D800E776A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		CBE2A1332BEE3B690052B9D7 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		CBE2A1352BEE57240052B9D7 /* TodayViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewTests.swift; sourceTree = "<group>"; };
 		CBE2A1372BEE57410052B9D7 /* QuoteViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteViewTests.swift; sourceTree = "<group>"; };
@@ -200,6 +201,7 @@
 				CB6D390E2BA7711F0098AE0E /* Common */,
 				CB6D391E2BA7711F0098AE0E /* Resources */,
 				CB6D39332BA7711F0098AE0E /* Utils */,
+				CBDD3A772BF132D800E776A5 /* Info.plist */,
 				CB6D38D32BA7706F0098AE0E /* Assets.xcassets */,
 				CB6D38D52BA7706F0098AE0E /* SparkleUP.entitlements */,
 				CB6D38D62BA7706F0098AE0E /* Preview Content */,
@@ -781,6 +783,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SparkleUP/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
@@ -823,6 +826,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SparkleUP/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
