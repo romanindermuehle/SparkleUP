@@ -6,65 +6,73 @@
 //
 
 import SwiftUI
-import Vortex
+import Foundation
+import AVKit
 
-struct SparkleRing: View {    
+struct SparkleRing: View {
     @Environment(\.dismiss) var dismiss
+    @State var player = AVPlayer()
+    
+    var splitViewVisibility: NavigationSplitViewVisibility?
+    
+    var screenHeight: Int? {
+        if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene {
+            return Int(windowScene.coordinateSpace.bounds.height) - (splitViewVisibility == .detailOnly ? 0: 250)
+        }
+        return nil
+    }
     
     var body: some View {
-        VStack {
-            Text("Congratulations")
-                .font(.title)
-                .fontWeight(.bold)
-                .foregroundStyle(.accent)
-            Text("Check in completed!")
-                .foregroundStyle(.accent)
-                .font(.headline)
-            
-            VortexView(createSparkle()) {
-                Circle()
-                    .fill(.white)
-                    .frame(width: 16)
-                    .tag("circle")
-            }
-            .edgesIgnoringSafeArea(.all)
-            
-        }
-        .background(.black)
-        .toolbar {
-            ToolbarItem(placement: .topBarTrailing) {
-                Button {
-                    dismiss()
-                } label: {
-                    Image(systemName: "x.circle.fill")
+        VideoPlayer(player: player)
+        #if(!os(visionOS))
+            .statusBarHidden()
+            .rotationEffect(.degrees(-90))
+        #endif
+        #if(os(visionOS))
+            .frame(height: CGFloat(screenHeight ?? 0))
+        #endif
+            .disabled(true)
+            .ignoresSafeArea(.all)
+            .background(.black)
+            .overlay(alignment: .top) {
+                VStack {
+                    Text("Congratulations")
+                        .font(.largeTitle)
+                        .fontWeight(.bold)
+                    
+                    Text("Check in completed!")
+                        .font(.headline)
                 }
+                .padding()
+                .foregroundStyle(Color.lightMagenta)
             }
-        }
-    }
-    
-    func createSparkle() -> VortexSystem {
-        let system = VortexSystem(tags: ["circle"])
-        system.birthRate = 800
-        system.emissionDuration = 0.5
-        system.idleDuration = 0.5
-        system.lifespan = 1.5
-        system.speed = 1.25
-        system.speedVariation = 0.2
-        system.angle = .degrees(800)
-        system.angleRange = .degrees(5)
-        system.acceleration = [0, 3]
-        system.dampingFactor = 4
-        system.colors = .ramp(.white, .yellow, .yellow.opacity(0))
-        system.size = 0.1
-        system.sizeVariation = 0.1
-        system.stretchFactor = 8
-        system.shape = .ellipse(radius: 5)
-        return system
+            .onAppear {
+                DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(8)) {
+                    dismiss()
+                }
+#if(!os(visionOS))
+                if let filePath = Bundle.main.url(forResource: "SparkleRing", withExtension: "mp4") {
+                    player = AVPlayer(url: filePath)
+                }
+#endif
+                
+#if(os(visionOS))
+                if let filePath = Bundle.main.url(forResource: "SparkleRingLandscape", withExtension: "mp4") {
+                    player = AVPlayer(url: filePath)
+                }
+#endif
+                
+                player.play()
+            }
     }
 }
+
+
 
 #Preview {
     SparkleRing()
 }
+
+
 
 
