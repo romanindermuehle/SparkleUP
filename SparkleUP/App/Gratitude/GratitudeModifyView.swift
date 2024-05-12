@@ -10,7 +10,7 @@ import SwiftData
 import TipKit
 
 struct GratitudeModifyView: View {
-    @Query var days: [Day]
+    @Query(sort: \Day.startedAt) var days: [Day]
     @Binding var gratitude: Gratitude?
     @Environment(\.modelContext) var context
     @Environment(\.dismiss) var dismiss
@@ -30,16 +30,6 @@ struct GratitudeModifyView: View {
     
     var body: some View {
         Form {
-            Section {
-                TipView(gratitudeTip, arrowEdge: .bottom)
-                    .padding()
-                    #if os(iOS)
-                    .tipBackground(Color.accentColor.opacity(0.1))
-                    #endif
-            }
-            .listRowBackground(Color.clear)
-            .listRowSeparator(.hidden)
-            
             if recordedInSequence <= 90 {
                 Section {
                     VStack(alignment: .center) {
@@ -59,6 +49,7 @@ struct GratitudeModifyView: View {
                         .gaugeStyle(.accessoryCircular)
                         .tint(Gradient(colors: [.lightMagenta, .darkMagenta]))
                     }
+                    .popoverTip(gratitudeTip)
                     .frame(maxWidth: .infinity, alignment: .center)
                 }
             }
@@ -70,8 +61,8 @@ struct GratitudeModifyView: View {
                     TextField("I'm grateful for...", text: $gratitudeValue2)
                 } else {
                     Image(systemName: "lock.badge.clock.fill")
-                        .foregroundStyle(Color.accentColor)
-                    TextField("Unlocked after 30 days", text: $gratitudeValue2)
+                        .foregroundStyle(.accent)
+                    TextField("Will unlock after 30 days", text: $gratitudeValue2)
                         .disabled(true || isEditing)
                 }
             }
@@ -80,8 +71,8 @@ struct GratitudeModifyView: View {
                     TextField("I'm grateful for...", text: $gratitudeValue3)
                 } else {
                     Image(systemName: "lock.badge.clock.fill")
-                        .foregroundStyle(Color.accentColor)
-                    TextField("Unlocked after 90 days", text: $gratitudeValue3)
+                        .foregroundStyle(.accent)
+                    TextField("Will unlock after 90 days", text: $gratitudeValue3)
                         .disabled(true || isEditing)
                 }
             }
@@ -106,7 +97,9 @@ struct GratitudeModifyView: View {
             gratitude?.gratitudeValue3 = gratitudeValue3
             gratitude?.recordedInSequence = recordedInSequence
         } else {
-            checkSequence()
+            let newSequenceNumber = checkSequence(days: days, recordedInSequence: recordedInSequence)
+            recordedInSequence += newSequenceNumber
+            
             let new = Gratitude(gratitudeValue1: gratitudeValue1, gratitudeValue2: gratitudeValue2, gratitudeValue3: gratitudeValue3, recordedInSequence: recordedInSequence)
             context.insert(new)
         }
@@ -114,18 +107,22 @@ struct GratitudeModifyView: View {
         dismiss()
     }
     
-    func checkSequence() {
-        if let day = days.last {
-            if day.tasksDone.contains(where: { $0 == "gratitudeDone" }) {
-                if Calendar.current.isDateInTomorrow(day.startedAt) {
-                    recordedInSequence += 1.0
-                    print(recordedInSequence)
-                }
+    func checkSequence(days: [Day], recordedInSequence: Double) -> Double {
+        let filteredDaysTaskDone = days.filter { $0.tasksDone.contains(where: { $0 == "gratitudeDone" }) }.sorted(by: { $0.startedAt < $1.startedAt })
+        let lastTwoDays = filteredDaysTaskDone.suffix(2)
+        
+        guard let fromDate  = lastTwoDays.first?.startedAt else { return 0.0 }
+        guard let toDate  = lastTwoDays.last?.startedAt else { return 0.0 }
+        let isNotToday = !Calendar.current.isDateInToday(toDate)
+        
+        if let dayDifference = calculateDayDifference(fromDate: fromDate, toDate: toDate) {
+            if dayDifference < 2 && isNotToday {
+                return 1.0
+            } else if recordedInSequence < 1 {
+                return 1.0
             }
-        } else {
-            recordedInSequence += 1.0
-            print(recordedInSequence)
         }
+        return 0.0
     }
     
     func markGratitudeDone() {
@@ -134,11 +131,7 @@ struct GratitudeModifyView: View {
                 
                 if day.tasksDone.count == 3 {
                     day.percentage += 0.4
-                } else {
-                    return
                 }
-        
-                return
             } else {
                 day.tasksDone.append("gratitudeDone")
                 
@@ -146,6 +139,10 @@ struct GratitudeModifyView: View {
                 
             }
         }
+    }
+    
+    func calculateDayDifference(fromDate: Date, toDate: Date) -> Int? {
+        Calendar.current.dateComponents([.day], from: fromDate, to: toDate).day
     }
 }
 
