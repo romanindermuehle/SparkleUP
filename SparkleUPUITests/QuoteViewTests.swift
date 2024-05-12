@@ -13,6 +13,8 @@ final class QuoteViewTests: XCTestCase {
         let app = XCUIApplication()
         app.launch()
         
+        app.buttons["Let's Start"].tap()
+        
         app.buttons["View your daily quote"].tap()
         app.buttons["rectangle.stack.badge.plus"].tap()
         
