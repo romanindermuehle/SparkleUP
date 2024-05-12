@@ -8,8 +8,8 @@
 import SwiftUI
 import SwiftData
 
-struct StatisticsView: View {
-    @Query var days: [Day]
+struct ProgressView: View {
+    @Query(sort: \Day.startedAt, order: .reverse) var days: [Day]
     @Query var moods: [Mood]
     
     
@@ -67,7 +67,7 @@ struct StatisticsView: View {
                     }
                 }
             }
-            .navigationTitle("Statistics")
+            .navigationTitle("Your Progress")
         }
     }
 }
