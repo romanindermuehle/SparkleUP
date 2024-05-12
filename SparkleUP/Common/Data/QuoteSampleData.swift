@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct SampleData {
+struct QuoteSampleData {
    static let quotes: [Quote] = [
         Quote(
             quote: "Don‘t ask me what I did, ask me what I thought.",
