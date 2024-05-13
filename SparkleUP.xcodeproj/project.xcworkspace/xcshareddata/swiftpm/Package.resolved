@@ -6,8 +6,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/twostraws/Vortex",
       "state" : {
-        "revision" : "bb48b128d3c13c68c68e83833c622eec9f6c701f",
-        "version" : "1.0.1"
+        "branch" : "main",
+        "revision" : "bb48b128d3c13c68c68e83833c622eec9f6c701f"
       }
     }
   ],

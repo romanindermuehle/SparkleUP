@@ -10,6 +10,7 @@
 		CB3B78982BED2127006F3233 /* SparkleRing.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = CB3B78972BED2127006F3233 /* SparkleRing.mp4 */; };
 		CB3B78A22BED655C006F3233 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3B78A12BED655C006F3233 /* SettingsView.swift */; };
 		CB3B78A42BED6AF6006F3233 /* AcknowledgementsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3B78A32BED6AF6006F3233 /* AcknowledgementsView.swift */; };
+		CB583A0B2BF1DA4100719B84 /* Vortex in Frameworks */ = {isa = PBXBuildFile; productRef = CB583A0A2BF1DA4100719B84 /* Vortex */; };
 		CB5FC4472BEFCD0D0082FE8C /* SparkleRingLandscape.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = CB5FC4462BEFCD0D0082FE8C /* SparkleRingLandscape.mp4 */; };
 		CB5FC4492BEFE44D0082FE8C /* QuoteViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5FC4482BEFE44D0082FE8C /* QuoteViewTests.swift */; };
 		CB5FC44B2BEFF3D30082FE8C /* MoodViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5FC44A2BEFF3D30082FE8C /* MoodViewTests.swift */; };
@@ -55,7 +56,6 @@
 		CB6D39602BA7711F0098AE0E /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6D39342BA7711F0098AE0E /* ProgressView.swift */; };
 		CB6D39612BA7711F0098AE0E /* TodayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6D39362BA7711F0098AE0E /* TodayView.swift */; };
 		CB7223C62BE198F500139CDA /* Firework.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7223C52BE198F500139CDA /* Firework.swift */; };
-		CBDD3A7A2BF1444B00E776A5 /* Vortex in Frameworks */ = {isa = PBXBuildFile; productRef = CBDD3A792BF1444B00E776A5 /* Vortex */; };
 		CBE2A1342BEE3B690052B9D7 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE2A1332BEE3B690052B9D7 /* Date.swift */; };
 		CBE2A1362BEE57240052B9D7 /* TodayViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE2A1352BEE57240052B9D7 /* TodayViewTests.swift */; };
 		CBE2A1382BEE57410052B9D7 /* QuoteViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE2A1372BEE57410052B9D7 /* QuoteViewTests.swift */; };
@@ -144,7 +144,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CBDD3A7A2BF1444B00E776A5 /* Vortex in Frameworks */,
+				CB583A0B2BF1DA4100719B84 /* Vortex in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -453,7 +453,7 @@
 			);
 			name = SparkleUP;
 			packageProductDependencies = (
-				CBDD3A792BF1444B00E776A5 /* Vortex */,
+				CB583A0A2BF1DA4100719B84 /* Vortex */,
 			);
 			productName = SparkleUP;
 			productReference = CB6D38CC2BA7706D0098AE0E /* SparkleUP.app */;
@@ -528,7 +528,7 @@
 			);
 			mainGroup = CB6D38C32BA7706D0098AE0E;
 			packageReferences = (
-				CBDD3A782BF1444B00E776A5 /* XCRemoteSwiftPackageReference "Vortex" */,
+				CB583A092BF1DA4100719B84 /* XCRemoteSwiftPackageReference "Vortex" */,
 			);
 			productRefGroup = CB6D38CD2BA7706D0098AE0E /* Products */;
 			projectDirPath = "";
@@ -995,20 +995,20 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		CBDD3A782BF1444B00E776A5 /* XCRemoteSwiftPackageReference "Vortex" */ = {
+		CB583A092BF1DA4100719B84 /* XCRemoteSwiftPackageReference "Vortex" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/twostraws/Vortex";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.1;
+				branch = main;
+				kind = branch;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		CBDD3A792BF1444B00E776A5 /* Vortex */ = {
+		CB583A0A2BF1DA4100719B84 /* Vortex */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = CBDD3A782BF1444B00E776A5 /* XCRemoteSwiftPackageReference "Vortex" */;
+			package = CB583A092BF1DA4100719B84 /* XCRemoteSwiftPackageReference "Vortex" */;
 			productName = Vortex;
 		};
 /* End XCSwiftPackageProductDependency section */
