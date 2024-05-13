@@ -12,7 +12,9 @@ final class MoodViewTests: XCTestCase {
     func testRecordNewMood() {
         let app = XCUIApplication()
         app.launch()
-                
+        
+        app.swipeDown()
+        
         app.buttons["Define your mood of the day"].tap()
         app.buttons["newMood"].tap()
         
