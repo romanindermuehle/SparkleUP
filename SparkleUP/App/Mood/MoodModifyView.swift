@@ -52,7 +52,6 @@ struct MoodModifyView: View {
                 .tint(getColor(moodLevel))
                 .disabled(isEditing)
                 .padding()
-                .accessibilityIdentifier("moodSlider")
         }
         .padding()
         .toolbar {

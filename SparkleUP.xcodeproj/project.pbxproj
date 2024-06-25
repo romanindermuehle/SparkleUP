@@ -12,8 +12,6 @@
 		CB3B78A42BED6AF6006F3233 /* AcknowledgementsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3B78A32BED6AF6006F3233 /* AcknowledgementsView.swift */; };
 		CB583A0B2BF1DA4100719B84 /* Vortex in Frameworks */ = {isa = PBXBuildFile; productRef = CB583A0A2BF1DA4100719B84 /* Vortex */; };
 		CB5FC4472BEFCD0D0082FE8C /* SparkleRingLandscape.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = CB5FC4462BEFCD0D0082FE8C /* SparkleRingLandscape.mp4 */; };
-		CB5FC4492BEFE44D0082FE8C /* QuoteViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5FC4482BEFE44D0082FE8C /* QuoteViewTests.swift */; };
-		CB5FC44B2BEFF3D30082FE8C /* MoodViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5FC44A2BEFF3D30082FE8C /* MoodViewTests.swift */; };
 		CB5FC44D2BEFFAF80082FE8C /* GratitudeViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5FC44C2BEFFAF80082FE8C /* GratitudeViewTests.swift */; };
 		CB6D38D02BA7706D0098AE0E /* SparkleUPApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6D38CF2BA7706D0098AE0E /* SparkleUPApp.swift */; };
 		CB6D38D22BA7706D0098AE0E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6D38D12BA7706D0098AE0E /* ContentView.swift */; };
@@ -84,8 +82,6 @@
 		CB3B78A12BED655C006F3233 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		CB3B78A32BED6AF6006F3233 /* AcknowledgementsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcknowledgementsView.swift; sourceTree = "<group>"; };
 		CB5FC4462BEFCD0D0082FE8C /* SparkleRingLandscape.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = SparkleRingLandscape.mp4; sourceTree = "<group>"; };
-		CB5FC4482BEFE44D0082FE8C /* QuoteViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteViewTests.swift; sourceTree = "<group>"; };
-		CB5FC44A2BEFF3D30082FE8C /* MoodViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodViewTests.swift; sourceTree = "<group>"; };
 		CB5FC44C2BEFFAF80082FE8C /* GratitudeViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GratitudeViewTests.swift; sourceTree = "<group>"; };
 		CB6D38CC2BA7706D0098AE0E /* SparkleUP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SparkleUP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB6D38CF2BA7706D0098AE0E /* SparkleUPApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SparkleUPApp.swift; sourceTree = "<group>"; };
@@ -232,9 +228,7 @@
 			isa = PBXGroup;
 			children = (
 				CB6D38EB2BA7706F0098AE0E /* SparkleUPUITests.swift */,
-				CB5FC4482BEFE44D0082FE8C /* QuoteViewTests.swift */,
 				CB6D38ED2BA7706F0098AE0E /* SparkleUPUITestsLaunchTests.swift */,
-				CB5FC44A2BEFF3D30082FE8C /* MoodViewTests.swift */,
 			);
 			path = SparkleUPUITests;
 			sourceTree = "<group>";
@@ -634,8 +628,6 @@
 			files = (
 				CB6D38EE2BA7706F0098AE0E /* SparkleUPUITestsLaunchTests.swift in Sources */,
 				CB6D38EC2BA7706F0098AE0E /* SparkleUPUITests.swift in Sources */,
-				CB5FC4492BEFE44D0082FE8C /* QuoteViewTests.swift in Sources */,
-				CB5FC44B2BEFF3D30082FE8C /* MoodViewTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

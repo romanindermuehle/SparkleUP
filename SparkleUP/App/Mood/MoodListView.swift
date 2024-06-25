@@ -79,7 +79,6 @@ struct MoodListView: View {
                 NavigationLink(value: true) {
                     Image(systemName: "plus")
                 }
-                .accessibilityIdentifier("newMood")
             }
         }
     }
