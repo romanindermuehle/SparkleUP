@@ -34,6 +34,6 @@ struct SparkleUPApp: App {
                     }
             }
         }
-        .modelContainer(for: [Gratitude.self, Day.self, Mood.self, Quote.self, Streak.self])
+        .modelContainer(for: [Gratitude.self, Day.self, Mood.self, Quote.self, Streak.self, User.self])
     }
 }
