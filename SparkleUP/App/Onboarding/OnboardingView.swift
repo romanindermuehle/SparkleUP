@@ -8,34 +8,17 @@
 import SwiftUI
 
 struct OnboardingView: View {
-    @Environment(\.modelContext) var context
-    
-    @AppStorage("isOnboarding") var isOnboarding: Bool?
+    @State var currentTab: Int = 0
     
     var body: some View {
-        NavigationStack {
-            VStack {
-                WelcomeView()
-                
-                Spacer()
-                
-                Button {
-                    context.insert(Day.init())
-                    isOnboarding = false
-                } label: {
-                    Text("Let's Start")
-#if os(iOS)
-                        .frame(width: 250, height: 50)
-                        .fontWeight(.semibold)
-                        .background(.accent)
-                        .foregroundStyle(.white)
-                        .clipShape(Capsule())
-#endif
-                }
-            }
-            .padding(.bottom, 20)
+        TabView(selection: $currentTab) {
+            WelcomeView(currentTab: $currentTab)
+                .tag(0)
+            CreateUserView(currentTab: $currentTab)
+                .tag(1)
         }
-        
+        .tabViewStyle(PageTabViewStyle())
+        .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .always))
     }
 }
 
