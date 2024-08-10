@@ -7,12 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CB37CE462C470CBF00545036 /* ProgressViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB37CE452C470CBF00545036 /* ProgressViewTests.swift */; };
 		CB3B78982BED2127006F3233 /* SparkleRing.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = CB3B78972BED2127006F3233 /* SparkleRing.mp4 */; };
 		CB3B78A22BED655C006F3233 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3B78A12BED655C006F3233 /* SettingsView.swift */; };
 		CB3B78A42BED6AF6006F3233 /* AcknowledgementsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3B78A32BED6AF6006F3233 /* AcknowledgementsView.swift */; };
+		CB3BC91D2C45566E008F7A67 /* Streak.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3BC91C2C45566E008F7A67 /* Streak.swift */; };
+		CB3BC91F2C457817008F7A67 /* DayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3BC91E2C457817008F7A67 /* DayView.swift */; };
 		CB583A0B2BF1DA4100719B84 /* Vortex in Frameworks */ = {isa = PBXBuildFile; productRef = CB583A0A2BF1DA4100719B84 /* Vortex */; };
 		CB5FC4472BEFCD0D0082FE8C /* SparkleRingLandscape.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = CB5FC4462BEFCD0D0082FE8C /* SparkleRingLandscape.mp4 */; };
 		CB5FC44D2BEFFAF80082FE8C /* GratitudeViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5FC44C2BEFFAF80082FE8C /* GratitudeViewTests.swift */; };
+		CB63B2B92C4AC4F0004A3585 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB63B2B82C4AC4F0004A3585 /* User.swift */; };
+		CB63B2BC2C4ACA53004A3585 /* CreateUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB63B2BA2C4ACA53004A3585 /* CreateUserView.swift */; };
 		CB6D38D02BA7706D0098AE0E /* SparkleUPApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6D38CF2BA7706D0098AE0E /* SparkleUPApp.swift */; };
 		CB6D38D22BA7706D0098AE0E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6D38D12BA7706D0098AE0E /* ContentView.swift */; };
 		CB6D38D42BA7706F0098AE0E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB6D38D32BA7706F0098AE0E /* Assets.xcassets */; };
@@ -54,6 +59,7 @@
 		CB6D39602BA7711F0098AE0E /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6D39342BA7711F0098AE0E /* ProgressView.swift */; };
 		CB6D39612BA7711F0098AE0E /* TodayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6D39362BA7711F0098AE0E /* TodayView.swift */; };
 		CB7223C62BE198F500139CDA /* Firework.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7223C52BE198F500139CDA /* Firework.swift */; };
+		CBBFCF692C3B337E00E09DA5 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBBFCF682C3B337E00E09DA5 /* CalendarView.swift */; };
 		CBE2A1342BEE3B690052B9D7 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE2A1332BEE3B690052B9D7 /* Date.swift */; };
 		CBE2A1362BEE57240052B9D7 /* TodayViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE2A1352BEE57240052B9D7 /* TodayViewTests.swift */; };
 		CBE2A1382BEE57410052B9D7 /* QuoteViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE2A1372BEE57410052B9D7 /* QuoteViewTests.swift */; };
@@ -78,11 +84,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CB37CE452C470CBF00545036 /* ProgressViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressViewTests.swift; sourceTree = "<group>"; };
 		CB3B78972BED2127006F3233 /* SparkleRing.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = SparkleRing.mp4; sourceTree = "<group>"; };
 		CB3B78A12BED655C006F3233 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		CB3B78A32BED6AF6006F3233 /* AcknowledgementsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcknowledgementsView.swift; sourceTree = "<group>"; };
+		CB3BC91C2C45566E008F7A67 /* Streak.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Streak.swift; sourceTree = "<group>"; };
+		CB3BC91E2C457817008F7A67 /* DayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayView.swift; sourceTree = "<group>"; };
 		CB5FC4462BEFCD0D0082FE8C /* SparkleRingLandscape.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = SparkleRingLandscape.mp4; sourceTree = "<group>"; };
 		CB5FC44C2BEFFAF80082FE8C /* GratitudeViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GratitudeViewTests.swift; sourceTree = "<group>"; };
+		CB63B2B82C4AC4F0004A3585 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		CB63B2BA2C4ACA53004A3585 /* CreateUserView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateUserView.swift; sourceTree = "<group>"; wrapsLines = 1; };
 		CB6D38CC2BA7706D0098AE0E /* SparkleUP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SparkleUP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB6D38CF2BA7706D0098AE0E /* SparkleUPApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SparkleUPApp.swift; sourceTree = "<group>"; };
 		CB6D38D12BA7706D0098AE0E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -128,6 +139,7 @@
 		CB6D39342BA7711F0098AE0E /* ProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
 		CB6D39362BA7711F0098AE0E /* TodayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodayView.swift; sourceTree = "<group>"; };
 		CB7223C52BE198F500139CDA /* Firework.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Firework.swift; sourceTree = "<group>"; };
+		CBBFCF682C3B337E00E09DA5 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 		CBDD3A772BF132D800E776A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		CBE2A1332BEE3B690052B9D7 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		CBE2A1352BEE57240052B9D7 /* TodayViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewTests.swift; sourceTree = "<group>"; };
@@ -168,6 +180,14 @@
 				CB3B78A32BED6AF6006F3233 /* AcknowledgementsView.swift */,
 			);
 			path = Settings;
+			sourceTree = "<group>";
+		};
+		CB63B2BB2C4ACA53004A3585 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				CB63B2BA2C4ACA53004A3585 /* CreateUserView.swift */,
+			);
+			path = User;
 			sourceTree = "<group>";
 		};
 		CB6D38C32BA7706D0098AE0E = {
@@ -220,6 +240,7 @@
 				CBE2A1352BEE57240052B9D7 /* TodayViewTests.swift */,
 				CBE2A1372BEE57410052B9D7 /* QuoteViewTests.swift */,
 				CB5FC44C2BEFFAF80082FE8C /* GratitudeViewTests.swift */,
+				CB37CE452C470CBF00545036 /* ProgressViewTests.swift */,
 			);
 			path = SparkleUPTests;
 			sourceTree = "<group>";
@@ -276,6 +297,8 @@
 				CB6D39092BA7711F0098AE0E /* Gratitude.swift */,
 				CB6D390A2BA7711F0098AE0E /* Mood.swift */,
 				CB6D390B2BA7711F0098AE0E /* Quote.swift */,
+				CB3BC91C2C45566E008F7A67 /* Streak.swift */,
+				CB63B2B82C4AC4F0004A3585 /* User.swift */,
 			);
 			path = DataModels;
 			sourceTree = "<group>";
@@ -303,6 +326,7 @@
 		CB6D39172BA7711F0098AE0E /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
+				CB63B2BB2C4ACA53004A3585 /* User */,
 				CB6D39152BA7711F0098AE0E /* Welcome */,
 				CB6D39162BA7711F0098AE0E /* OnboardingView.swift */,
 			);
@@ -367,6 +391,8 @@
 		CB6D39322BA7711F0098AE0E /* UIComponents */ = {
 			isa = PBXGroup;
 			children = (
+				CBBFCF682C3B337E00E09DA5 /* CalendarView.swift */,
+				CB3BC91E2C457817008F7A67 /* DayView.swift */,
 				CB6D392C2BA7711F0098AE0E /* Card.swift */,
 				CB6D392D2BA7711F0098AE0E /* HalfCircleShape.swift */,
 				CB6D392E2BA7711F0098AE0E /* MoodBarometer.swift */,
@@ -497,7 +523,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1530;
-				LastUpgradeCheck = 1530;
+				LastUpgradeCheck = 1540;
 				TargetAttributes = {
 					CB6D38CB2BA7706D0098AE0E = {
 						CreatedOnToolsVersion = 15.3;
@@ -570,15 +596,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				CB6D393A2BA7711F0098AE0E /* MoodListView.swift in Sources */,
+				CB63B2BC2C4ACA53004A3585 /* CreateUserView.swift in Sources */,
 				CB6D393B2BA7711F0098AE0E /* MoodModifyView.swift in Sources */,
 				CB6D39412BA7711F0098AE0E /* Day.swift in Sources */,
 				CB6D39562BA7711F0098AE0E /* BatteryTip.swift in Sources */,
 				CB6D39582BA7711F0098AE0E /* QuoteTip.swift in Sources */,
 				CB6D39422BA7711F0098AE0E /* Gratitude.swift in Sources */,
 				CB3B78A22BED655C006F3233 /* SettingsView.swift in Sources */,
+				CB3BC91F2C457817008F7A67 /* DayView.swift in Sources */,
 				CB6D38D22BA7706D0098AE0E /* ContentView.swift in Sources */,
 				CB6D395F2BA7711F0098AE0E /* SparkleRing.swift in Sources */,
 				CB6D39492BA7711F0098AE0E /* WelcomeHeader.swift in Sources */,
+				CBBFCF692C3B337E00E09DA5 /* CalendarView.swift in Sources */,
 				CB7223C62BE198F500139CDA /* Firework.swift in Sources */,
 				CB6D39402BA7711F0098AE0E /* QuoteSampleData.swift in Sources */,
 				CB6D393E2BA7711F0098AE0E /* GratitudeListView.swift in Sources */,
@@ -600,6 +629,7 @@
 				CB6D39532BA7711F0098AE0E /* Color.swift in Sources */,
 				CB6D395A2BA7711F0098AE0E /* Card.swift in Sources */,
 				CB6D39392BA7711F0098AE0E /* AppTabView.swift in Sources */,
+				CB3BC91D2C45566E008F7A67 /* Streak.swift in Sources */,
 				CB6D395C2BA7711F0098AE0E /* MoodBarometer.swift in Sources */,
 				CB6D39442BA7711F0098AE0E /* Quote.swift in Sources */,
 				CB6D394D2BA7711F0098AE0E /* QuoteView.swift in Sources */,
@@ -608,6 +638,7 @@
 				CB6D39472BA7711F0098AE0E /* InformationContainerView.swift in Sources */,
 				CBE2A1342BEE3B690052B9D7 /* Date.swift in Sources */,
 				CB6D394B2BA7711F0098AE0E /* OnboardingView.swift in Sources */,
+				CB63B2B92C4AC4F0004A3585 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -619,6 +650,7 @@
 				CB6D38E22BA7706F0098AE0E /* SparkleUPTests.swift in Sources */,
 				CB5FC44D2BEFFAF80082FE8C /* GratitudeViewTests.swift in Sources */,
 				CBE2A1382BEE57410052B9D7 /* QuoteViewTests.swift in Sources */,
+				CB37CE462C470CBF00545036 /* ProgressViewTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -681,6 +713,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -742,6 +775,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -770,6 +804,7 @@
 				CODE_SIGN_ENTITLEMENTS = SparkleUP/SparkleUP.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"SparkleUP/Preview Content\"";
 				DEVELOPMENT_TEAM = 7SM6PL3XT8;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -791,7 +826,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 14.4;
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = ch.romanindermuehle.SparkleUP;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
@@ -813,6 +848,7 @@
 				CODE_SIGN_ENTITLEMENTS = SparkleUP/SparkleUP.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"SparkleUP/Preview Content\"";
 				DEVELOPMENT_TEAM = 7SM6PL3XT8;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -834,7 +870,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 14.4;
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = ch.romanindermuehle.SparkleUP;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
@@ -854,6 +890,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 7SM6PL3XT8;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
@@ -879,6 +916,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 7SM6PL3XT8;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
@@ -903,6 +941,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 7SM6PL3XT8;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
@@ -927,6 +966,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 7SM6PL3XT8;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
