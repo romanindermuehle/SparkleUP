@@ -10,9 +10,14 @@
 		CB37CE462C470CBF00545036 /* ProgressViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB37CE452C470CBF00545036 /* ProgressViewTests.swift */; };
 		CB3B78982BED2127006F3233 /* SparkleRing.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = CB3B78972BED2127006F3233 /* SparkleRing.mp4 */; };
 		CB3B78A22BED655C006F3233 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3B78A12BED655C006F3233 /* SettingsView.swift */; };
-		CB3B78A42BED6AF6006F3233 /* AcknowledgementsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3B78A32BED6AF6006F3233 /* AcknowledgementsView.swift */; };
 		CB3BC91D2C45566E008F7A67 /* Streak.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3BC91C2C45566E008F7A67 /* Streak.swift */; };
 		CB3BC91F2C457817008F7A67 /* DayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3BC91E2C457817008F7A67 /* DayView.swift */; };
+		CB42B4392C68B26D0023B353 /* BackupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB42B4382C68B26D0023B353 /* BackupView.swift */; };
+		CB42B43B2C68F4930023B353 /* ThirdPartyLicenseUrls.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB42B43A2C68F4930023B353 /* ThirdPartyLicenseUrls.swift */; };
+		CB42B43D2C68F6B90023B353 /* SocialMediaUrls.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB42B43C2C68F6B90023B353 /* SocialMediaUrls.swift */; };
+		CB51C42D2C67C28300475421 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB51C42C2C67C28300475421 /* Image.swift */; };
+		CB51C42F2C67CAFD00475421 /* UserModifyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB51C42E2C67CAFD00475421 /* UserModifyView.swift */; };
+		CB51C4312C681D9D00475421 /* AboutTheAppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB51C4302C681D9D00475421 /* AboutTheAppView.swift */; };
 		CB583A0B2BF1DA4100719B84 /* Vortex in Frameworks */ = {isa = PBXBuildFile; productRef = CB583A0A2BF1DA4100719B84 /* Vortex */; };
 		CB5FC4472BEFCD0D0082FE8C /* SparkleRingLandscape.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = CB5FC4462BEFCD0D0082FE8C /* SparkleRingLandscape.mp4 */; };
 		CB5FC44D2BEFFAF80082FE8C /* GratitudeViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5FC44C2BEFFAF80082FE8C /* GratitudeViewTests.swift */; };
@@ -87,9 +92,14 @@
 		CB37CE452C470CBF00545036 /* ProgressViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressViewTests.swift; sourceTree = "<group>"; };
 		CB3B78972BED2127006F3233 /* SparkleRing.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = SparkleRing.mp4; sourceTree = "<group>"; };
 		CB3B78A12BED655C006F3233 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
-		CB3B78A32BED6AF6006F3233 /* AcknowledgementsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcknowledgementsView.swift; sourceTree = "<group>"; };
 		CB3BC91C2C45566E008F7A67 /* Streak.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Streak.swift; sourceTree = "<group>"; };
 		CB3BC91E2C457817008F7A67 /* DayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayView.swift; sourceTree = "<group>"; };
+		CB42B4382C68B26D0023B353 /* BackupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackupView.swift; sourceTree = "<group>"; };
+		CB42B43A2C68F4930023B353 /* ThirdPartyLicenseUrls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdPartyLicenseUrls.swift; sourceTree = "<group>"; };
+		CB42B43C2C68F6B90023B353 /* SocialMediaUrls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialMediaUrls.swift; sourceTree = "<group>"; };
+		CB51C42C2C67C28300475421 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
+		CB51C42E2C67CAFD00475421 /* UserModifyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModifyView.swift; sourceTree = "<group>"; };
+		CB51C4302C681D9D00475421 /* AboutTheAppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutTheAppView.swift; sourceTree = "<group>"; };
 		CB5FC4462BEFCD0D0082FE8C /* SparkleRingLandscape.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = SparkleRingLandscape.mp4; sourceTree = "<group>"; };
 		CB5FC44C2BEFFAF80082FE8C /* GratitudeViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GratitudeViewTests.swift; sourceTree = "<group>"; };
 		CB63B2B82C4AC4F0004A3585 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -177,7 +187,9 @@
 			isa = PBXGroup;
 			children = (
 				CB3B78A12BED655C006F3233 /* SettingsView.swift */,
-				CB3B78A32BED6AF6006F3233 /* AcknowledgementsView.swift */,
+				CB51C42E2C67CAFD00475421 /* UserModifyView.swift */,
+				CB51C4302C681D9D00475421 /* AboutTheAppView.swift */,
+				CB42B4382C68B26D0023B353 /* BackupView.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -286,6 +298,8 @@
 			children = (
 				CB6D39062BA7711F0098AE0E /* QuoteSampleData.swift */,
 				CBEF38762BE78FE1006AD251 /* Greetings.swift */,
+				CB42B43A2C68F4930023B353 /* ThirdPartyLicenseUrls.swift */,
+				CB42B43C2C68F6B90023B353 /* SocialMediaUrls.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -365,6 +379,7 @@
 			children = (
 				CB6D39222BA7711F0098AE0E /* Color.swift */,
 				CBE2A1332BEE3B690052B9D7 /* Date.swift */,
+				CB51C42C2C67C28300475421 /* Image.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -600,9 +615,11 @@
 				CB6D393B2BA7711F0098AE0E /* MoodModifyView.swift in Sources */,
 				CB6D39412BA7711F0098AE0E /* Day.swift in Sources */,
 				CB6D39562BA7711F0098AE0E /* BatteryTip.swift in Sources */,
+				CB42B43B2C68F4930023B353 /* ThirdPartyLicenseUrls.swift in Sources */,
 				CB6D39582BA7711F0098AE0E /* QuoteTip.swift in Sources */,
 				CB6D39422BA7711F0098AE0E /* Gratitude.swift in Sources */,
 				CB3B78A22BED655C006F3233 /* SettingsView.swift in Sources */,
+				CB42B43D2C68F6B90023B353 /* SocialMediaUrls.swift in Sources */,
 				CB3BC91F2C457817008F7A67 /* DayView.swift in Sources */,
 				CB6D38D22BA7706D0098AE0E /* ContentView.swift in Sources */,
 				CB6D395F2BA7711F0098AE0E /* SparkleRing.swift in Sources */,
@@ -612,17 +629,20 @@
 				CB6D39402BA7711F0098AE0E /* QuoteSampleData.swift in Sources */,
 				CB6D393E2BA7711F0098AE0E /* GratitudeListView.swift in Sources */,
 				CB6D393F2BA7711F0098AE0E /* GratitudeModifyView.swift in Sources */,
+				CB51C42F2C67CAFD00475421 /* UserModifyView.swift in Sources */,
 				CB6D39552BA7711F0098AE0E /* MoodLevel.swift in Sources */,
+				CB51C4312C681D9D00475421 /* AboutTheAppView.swift in Sources */,
 				CBEF38772BE78FE1006AD251 /* Greetings.swift in Sources */,
+				CB51C42D2C67C28300475421 /* Image.swift in Sources */,
 				CB6D38D02BA7706D0098AE0E /* SparkleUPApp.swift in Sources */,
 				CB6D39612BA7711F0098AE0E /* TodayView.swift in Sources */,
 				CB6D395B2BA7711F0098AE0E /* HalfCircleShape.swift in Sources */,
 				CB6D39592BA7711F0098AE0E /* RingTip.swift in Sources */,
 				CB6D394A2BA7711F0098AE0E /* WelcomeView.swift in Sources */,
 				CB6D39602BA7711F0098AE0E /* ProgressView.swift in Sources */,
+				CB42B4392C68B26D0023B353 /* BackupView.swift in Sources */,
 				CB6D39572BA7711F0098AE0E /* GratitudeTip.swift in Sources */,
 				CB6D39482BA7711F0098AE0E /* InformationDetailView.swift in Sources */,
-				CB3B78A42BED6AF6006F3233 /* AcknowledgementsView.swift in Sources */,
 				CB6D39432BA7711F0098AE0E /* Mood.swift in Sources */,
 				CB6D39512BA7711F0098AE0E /* DailyTask.swift in Sources */,
 				CB6D395E2BA7711F0098AE0E /* ProgressRing.swift in Sources */,
