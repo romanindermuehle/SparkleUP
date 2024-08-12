@@ -80,6 +80,7 @@ struct CreateUserView: View {
     func finishOnboarding() {
         isOnboarding = false
         context.insert(Day.init())
+        context.insert(Streak.init(lastUpdated: nil))
     }
 }
 
