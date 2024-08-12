@@ -116,11 +116,6 @@ struct TodayView: View {
                         }
                         
                         selectNewGreeting()
-                        
-                        if let newDay = createNewDay(days: days) {
-                            context.insert(newDay.day)
-                            context.insert(newDay.streak)
-                        }
                     }
                     .navigationDestination(for: DailyTask.self) { dailyTask in
                         dailyTask.destination
@@ -138,17 +133,6 @@ struct TodayView: View {
     func selectNewGreeting() {
         Greetings.messages.shuffle()
         currentGreeting = Greetings.messages.randomElement() ?? ""
-    }
-    
-    func createNewDay(days: [Day]) -> (day: Day, streak: Streak)? {
-        if !days.contains(where: { $0.startedAt.formatted(date: .abbreviated, time: .omitted) == Date().formatted(date: .abbreviated, time: .omitted) }) {
-            let day = Day.init()
-            let streak = Streak(lastUpdated: nil)
-            
-            return (day, streak)
-        }
-        
-        return nil
     }
 }
 
