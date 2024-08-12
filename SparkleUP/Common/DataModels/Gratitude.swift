@@ -14,13 +14,11 @@ class Gratitude: Hashable {
     var gratitudeValue2: String
     var gratitudeValue3: String
     var createdAt: Date
-    var recordedInSequence: Double
     
-    init(gratitudeValue1: String, gratitudeValue2: String, gratitudeValue3: String, createdAt: Date = .now, recordedInSequence: Double) {
+    init(gratitudeValue1: String, gratitudeValue2: String, gratitudeValue3: String, createdAt: Date = .now) {
         self.gratitudeValue1 = gratitudeValue1
         self.gratitudeValue2 = gratitudeValue2
         self.gratitudeValue3 = gratitudeValue3
         self.createdAt = createdAt
-        self.recordedInSequence = recordedInSequence
     }
 }
