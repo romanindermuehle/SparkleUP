@@ -31,7 +31,6 @@ struct WelcomeView: View {
             
             Button {
                 currentTab += 1
-                print(currentTab)
             } label: {
                 Text("Continue")
                     .frame(width: 250, height: 50)
