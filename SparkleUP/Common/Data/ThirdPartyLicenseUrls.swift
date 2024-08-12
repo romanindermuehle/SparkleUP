@@ -8,7 +8,7 @@
 import Foundation
 
 struct ThirdPartyLicenseUrl {
-    let id = UUID()
+    let id: UUID = UUID()
     var name: String
     var url: URL?
 }
