@@ -33,6 +33,8 @@ struct GratitudeListView: View {
                         NavigationLink(value: gratitude) {
                             VStack(alignment: .leading) {
                                 Text(gratitude.gratitudeValue1)
+                                    .lineLimit(1)
+                                    .truncationMode(.tail)
                                 Text(gratitude.createdAt, style: .date)
                             }
                         }
@@ -50,15 +52,11 @@ struct GratitudeListView: View {
         }
         .navigationTitle("Your Gratitudes")
         .navigationDestination(for: Gratitude.self) { gratitude in
-            GratitudeModifyView(gratitude: .constant(gratitude), gratitudeValue1: gratitude.gratitudeValue1, gratitudeValue2: gratitude.gratitudeValue2, gratitudeValue3: gratitude.gratitudeValue3, recordedInSequence: gratitude.recordedInSequence, isEditing: true)
+            GratitudeModifyView(gratitude: .constant(gratitude), gratitudeValue1: gratitude.gratitudeValue1, gratitudeValue2: gratitude.gratitudeValue2, gratitudeValue3: gratitude.gratitudeValue3, isEditing: true)
             
         }
         .navigationDestination(for: Bool.self) { _ in
-            if let previousGartitude = gratitudes.first {
-                GratitudeModifyView(gratitude: .constant(nil), gratitudeValue1: "", gratitudeValue2: "", gratitudeValue3: "", recordedInSequence: previousGartitude.recordedInSequence, isEditing: false)
-            } else {
-                GratitudeModifyView(gratitude: .constant(nil), gratitudeValue1: "", gratitudeValue2: "", gratitudeValue3: "", recordedInSequence: 0.0, isEditing: false)
-            }
+            GratitudeModifyView(gratitude: .constant(nil), gratitudeValue1: "", gratitudeValue2: "", gratitudeValue3: "", isEditing: false)
         }
         .toolbar(.hidden, for: .tabBar)
         .toolbar {
