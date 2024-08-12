@@ -53,7 +53,6 @@
 		CB6D39532BA7711F0098AE0E /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6D39222BA7711F0098AE0E /* Color.swift */; };
 		CB6D39552BA7711F0098AE0E /* MoodLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6D39252BA7711F0098AE0E /* MoodLevel.swift */; };
 		CB6D39562BA7711F0098AE0E /* BatteryTip.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6D39272BA7711F0098AE0E /* BatteryTip.swift */; };
-		CB6D39572BA7711F0098AE0E /* GratitudeTip.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6D39282BA7711F0098AE0E /* GratitudeTip.swift */; };
 		CB6D39582BA7711F0098AE0E /* QuoteTip.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6D39292BA7711F0098AE0E /* QuoteTip.swift */; };
 		CB6D39592BA7711F0098AE0E /* RingTip.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6D392A2BA7711F0098AE0E /* RingTip.swift */; };
 		CB6D395A2BA7711F0098AE0E /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6D392C2BA7711F0098AE0E /* Card.swift */; };
@@ -138,7 +137,6 @@
 		CB6D39222BA7711F0098AE0E /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		CB6D39252BA7711F0098AE0E /* MoodLevel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoodLevel.swift; sourceTree = "<group>"; };
 		CB6D39272BA7711F0098AE0E /* BatteryTip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BatteryTip.swift; sourceTree = "<group>"; };
-		CB6D39282BA7711F0098AE0E /* GratitudeTip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GratitudeTip.swift; sourceTree = "<group>"; };
 		CB6D39292BA7711F0098AE0E /* QuoteTip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuoteTip.swift; sourceTree = "<group>"; };
 		CB6D392A2BA7711F0098AE0E /* RingTip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RingTip.swift; sourceTree = "<group>"; };
 		CB6D392C2BA7711F0098AE0E /* Card.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
@@ -396,7 +394,6 @@
 			isa = PBXGroup;
 			children = (
 				CB6D39272BA7711F0098AE0E /* BatteryTip.swift */,
-				CB6D39282BA7711F0098AE0E /* GratitudeTip.swift */,
 				CB6D39292BA7711F0098AE0E /* QuoteTip.swift */,
 				CB6D392A2BA7711F0098AE0E /* RingTip.swift */,
 			);
@@ -641,7 +638,6 @@
 				CB6D394A2BA7711F0098AE0E /* WelcomeView.swift in Sources */,
 				CB6D39602BA7711F0098AE0E /* ProgressView.swift in Sources */,
 				CB42B4392C68B26D0023B353 /* BackupView.swift in Sources */,
-				CB6D39572BA7711F0098AE0E /* GratitudeTip.swift in Sources */,
 				CB6D39482BA7711F0098AE0E /* InformationDetailView.swift in Sources */,
 				CB6D39432BA7711F0098AE0E /* Mood.swift in Sources */,
 				CB6D39512BA7711F0098AE0E /* DailyTask.swift in Sources */,
