@@ -62,7 +62,7 @@ final class ProgressViewTests: XCTestCase {
         
         let calenderView = CalendarView(days: days)
         
-        let getShortWeekdaySymbols = calenderView.getShortWeekdaySymbols()
+        let getShortWeekdaySymbols = calenderView.getShortWeekdaySymbols().map { $0.1 }
         
         XCTAssertEqual(getShortWeekdaySymbols, ["M", "T", "W", "T", "F", "S", "S"])
     }
