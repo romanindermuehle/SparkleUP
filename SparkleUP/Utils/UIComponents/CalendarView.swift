@@ -11,35 +11,43 @@ struct CalendarView: View {
     let days: [Day]
     
     let columns: [GridItem] = Array(repeating: .init(.flexible()), count: 7)
-    @State var weekdays: [String] = []
-    @State var datesOfMonth: [Date] = []
+    @State var weekdays: [(id: UUID, symbol: String)] = []
+    @State var datesOfMonth: [CalendarDay] = []
     
     var body: some View {
         LazyVGrid(columns: columns) {
-            ForEach(weekdays.indices, id: \.self) { index in
-                Text(weekdays[index])
+            ForEach(weekdays, id: \.id) { key, value in
+                Text(value)
                     .fontWeight(.bold)
             }
             
-            ForEach(datesOfMonth, id: \.self) { date in
-                DayView(date: date, isCompleted: isDayCompleted(for: date))
+            ForEach(datesOfMonth, id: \.id) { day in
+                DayView(date: day.date, isCompleted: isDayCompleted(for: day.date))
             }
         }
-        .onAppear {
+        .task {
             weekdays = getShortWeekdaySymbols()
             datesOfMonth = getDatesForCurrentMonth()
-            
         }
     }
     
-    func getShortWeekdaySymbols() -> [String] {
+    func getShortWeekdaySymbols() -> [(UUID, String)] {
         let calendar = Calendar.current
         let symbols = calendar.veryShortWeekdaySymbols
         let firstWeekdayIndex = calendar.firstWeekday - 1
-        return Array(symbols[firstWeekdayIndex..<symbols.count] + symbols[0..<firstWeekdayIndex])
+        let reorderedSymbols = Array(symbols[firstWeekdayIndex..<symbols.count] + symbols[0..<firstWeekdayIndex])
+        
+        var result: [(UUID, String)] = []
+        
+        for symbol in reorderedSymbols {
+            let uuid = UUID()
+            result.append((uuid, symbol))
+        }
+        
+        return result
     }
     
-    func getDatesForCurrentMonth(currentDate: Date = .now) -> [Date] {
+    func getDatesForCurrentMonth(currentDate: Date = .now) -> [CalendarDay] {
         let calendar = Calendar.current
         let components = calendar.dateComponents([.year, .month], from: currentDate)
         
@@ -51,14 +59,31 @@ struct CalendarView: View {
             return []
         }
         
-        var dates = range.compactMap { calendar.date(byAdding: .day, value: $0 - 1, to: startOfMonth) }
+        var dates = range.compactMap { day -> CalendarDay? in
+            guard let date = calendar.date(byAdding: .day, value: day - 1, to: startOfMonth) else {
+                return nil
+            }
+            return CalendarDay(date: date)
+        }
         
         let firstWeekday = calendar.component(.weekday, from: startOfMonth)
         let leadingEmptyDays = (firstWeekday - calendar.firstWeekday + 7) % 7
         
-        dates.insert(contentsOf: Array(repeating: Date.distantPast, count: leadingEmptyDays), at: 0)
+        let placeholders = generatePlaceholders(count: leadingEmptyDays)
+        
+        dates.insert(contentsOf: placeholders, at: 0)
         
         return dates
+    }
+    
+    func generatePlaceholders(count: Int) -> [CalendarDay] {
+        var placeholders: [CalendarDay] = []
+        
+        for _ in 0..<count {
+            placeholders.append(CalendarDay(date: Date.distantPast))
+        }
+        
+        return placeholders
     }
     
     func isDayCompleted(for date: Date) -> Bool {

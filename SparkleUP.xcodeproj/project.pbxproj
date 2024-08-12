@@ -15,12 +15,12 @@
 		CB42B4392C68B26D0023B353 /* BackupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB42B4382C68B26D0023B353 /* BackupView.swift */; };
 		CB42B43B2C68F4930023B353 /* ThirdPartyLicenseUrls.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB42B43A2C68F4930023B353 /* ThirdPartyLicenseUrls.swift */; };
 		CB42B43D2C68F6B90023B353 /* SocialMediaUrls.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB42B43C2C68F6B90023B353 /* SocialMediaUrls.swift */; };
+		CB42B43F2C69543D0023B353 /* CalendarDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB42B43E2C69543D0023B353 /* CalendarDay.swift */; };
 		CB51C42D2C67C28300475421 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB51C42C2C67C28300475421 /* Image.swift */; };
 		CB51C42F2C67CAFD00475421 /* UserModifyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB51C42E2C67CAFD00475421 /* UserModifyView.swift */; };
 		CB51C4312C681D9D00475421 /* AboutTheAppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB51C4302C681D9D00475421 /* AboutTheAppView.swift */; };
 		CB583A0B2BF1DA4100719B84 /* Vortex in Frameworks */ = {isa = PBXBuildFile; productRef = CB583A0A2BF1DA4100719B84 /* Vortex */; };
 		CB5FC4472BEFCD0D0082FE8C /* SparkleRingLandscape.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = CB5FC4462BEFCD0D0082FE8C /* SparkleRingLandscape.mp4 */; };
-		CB5FC44D2BEFFAF80082FE8C /* GratitudeViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5FC44C2BEFFAF80082FE8C /* GratitudeViewTests.swift */; };
 		CB63B2B92C4AC4F0004A3585 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB63B2B82C4AC4F0004A3585 /* User.swift */; };
 		CB63B2BC2C4ACA53004A3585 /* CreateUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB63B2BA2C4ACA53004A3585 /* CreateUserView.swift */; };
 		CB6D38D02BA7706D0098AE0E /* SparkleUPApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6D38CF2BA7706D0098AE0E /* SparkleUPApp.swift */; };
@@ -66,7 +66,7 @@
 		CB7223C62BE198F500139CDA /* Firework.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7223C52BE198F500139CDA /* Firework.swift */; };
 		CBBFCF692C3B337E00E09DA5 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBBFCF682C3B337E00E09DA5 /* CalendarView.swift */; };
 		CBE2A1342BEE3B690052B9D7 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE2A1332BEE3B690052B9D7 /* Date.swift */; };
-		CBE2A1362BEE57240052B9D7 /* TodayViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE2A1352BEE57240052B9D7 /* TodayViewTests.swift */; };
+		CBE2A1362BEE57240052B9D7 /* ContentViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE2A1352BEE57240052B9D7 /* ContentViewTests.swift */; };
 		CBE2A1382BEE57410052B9D7 /* QuoteViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE2A1372BEE57410052B9D7 /* QuoteViewTests.swift */; };
 		CBEF38772BE78FE1006AD251 /* Greetings.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEF38762BE78FE1006AD251 /* Greetings.swift */; };
 /* End PBXBuildFile section */
@@ -97,11 +97,11 @@
 		CB42B4382C68B26D0023B353 /* BackupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackupView.swift; sourceTree = "<group>"; };
 		CB42B43A2C68F4930023B353 /* ThirdPartyLicenseUrls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdPartyLicenseUrls.swift; sourceTree = "<group>"; };
 		CB42B43C2C68F6B90023B353 /* SocialMediaUrls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialMediaUrls.swift; sourceTree = "<group>"; };
+		CB42B43E2C69543D0023B353 /* CalendarDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDay.swift; sourceTree = "<group>"; };
 		CB51C42C2C67C28300475421 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		CB51C42E2C67CAFD00475421 /* UserModifyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModifyView.swift; sourceTree = "<group>"; };
 		CB51C4302C681D9D00475421 /* AboutTheAppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutTheAppView.swift; sourceTree = "<group>"; };
 		CB5FC4462BEFCD0D0082FE8C /* SparkleRingLandscape.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = SparkleRingLandscape.mp4; sourceTree = "<group>"; };
-		CB5FC44C2BEFFAF80082FE8C /* GratitudeViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GratitudeViewTests.swift; sourceTree = "<group>"; };
 		CB63B2B82C4AC4F0004A3585 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		CB63B2BA2C4ACA53004A3585 /* CreateUserView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateUserView.swift; sourceTree = "<group>"; wrapsLines = 1; };
 		CB6D38CC2BA7706D0098AE0E /* SparkleUP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SparkleUP.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -152,7 +152,7 @@
 		CBBFCF682C3B337E00E09DA5 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 		CBDD3A772BF132D800E776A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		CBE2A1332BEE3B690052B9D7 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
-		CBE2A1352BEE57240052B9D7 /* TodayViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewTests.swift; sourceTree = "<group>"; };
+		CBE2A1352BEE57240052B9D7 /* ContentViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewTests.swift; sourceTree = "<group>"; };
 		CBE2A1372BEE57410052B9D7 /* QuoteViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteViewTests.swift; sourceTree = "<group>"; };
 		CBEF38762BE78FE1006AD251 /* Greetings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Greetings.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -249,9 +249,8 @@
 			isa = PBXGroup;
 			children = (
 				CB6D38E12BA7706F0098AE0E /* SparkleUPTests.swift */,
-				CBE2A1352BEE57240052B9D7 /* TodayViewTests.swift */,
+				CBE2A1352BEE57240052B9D7 /* ContentViewTests.swift */,
 				CBE2A1372BEE57410052B9D7 /* QuoteViewTests.swift */,
-				CB5FC44C2BEFFAF80082FE8C /* GratitudeViewTests.swift */,
 				CB37CE452C470CBF00545036 /* ProgressViewTests.swift */,
 			);
 			path = SparkleUPTests;
@@ -313,6 +312,7 @@
 				CB6D390B2BA7711F0098AE0E /* Quote.swift */,
 				CB3BC91C2C45566E008F7A67 /* Streak.swift */,
 				CB63B2B82C4AC4F0004A3585 /* User.swift */,
+				CB42B43E2C69543D0023B353 /* CalendarDay.swift */,
 			);
 			path = DataModels;
 			sourceTree = "<group>";
@@ -648,6 +648,7 @@
 				CB6D395E2BA7711F0098AE0E /* ProgressRing.swift in Sources */,
 				CB6D39532BA7711F0098AE0E /* Color.swift in Sources */,
 				CB6D395A2BA7711F0098AE0E /* Card.swift in Sources */,
+				CB42B43F2C69543D0023B353 /* CalendarDay.swift in Sources */,
 				CB6D39392BA7711F0098AE0E /* AppTabView.swift in Sources */,
 				CB3BC91D2C45566E008F7A67 /* Streak.swift in Sources */,
 				CB6D395C2BA7711F0098AE0E /* MoodBarometer.swift in Sources */,
@@ -666,9 +667,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CBE2A1362BEE57240052B9D7 /* TodayViewTests.swift in Sources */,
+				CBE2A1362BEE57240052B9D7 /* ContentViewTests.swift in Sources */,
 				CB6D38E22BA7706F0098AE0E /* SparkleUPTests.swift in Sources */,
-				CB5FC44D2BEFFAF80082FE8C /* GratitudeViewTests.swift in Sources */,
 				CBE2A1382BEE57410052B9D7 /* QuoteViewTests.swift in Sources */,
 				CB37CE462C470CBF00545036 /* ProgressViewTests.swift in Sources */,
 			);
