@@ -62,7 +62,7 @@ struct ProgressView: View {
             }
             .navigationTitle("Your Progress")
         }
-        .onAppear {
+        .task {
             bestStreakCount = streaks.map { $0.count }.max() ?? 0
             
             let lastCount = streaks.suffix(2).first?.count

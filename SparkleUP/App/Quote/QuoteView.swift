@@ -64,7 +64,7 @@ struct QuoteView: View {
             }
         }
         .toolbar(.hidden, for: .tabBar)
-        .onAppear {
+        .task {
             if let day = days.last {
                 if day.quoteOfTheDay == nil {
                     if let newQuote = selectNewQuote(quotes: quotes) {

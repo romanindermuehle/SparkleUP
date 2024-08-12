@@ -19,7 +19,7 @@ struct SparkleUPApp: App {
         WindowGroup {
             if isOnboarding {
                 ContentView()
-                    .onAppear {
+                    .task {
                         showOnboarding = true
                     }
                     .fullScreenCover(isPresented: $showOnboarding) {
