@@ -12,18 +12,20 @@ final class ContentViewTests: XCTestCase {
 
     func testNewDaySuccessful() {
         let days: [Day] = [Day(startedAt: Calendar.current.date(byAdding: .day, value: -1, to: Date()) ?? Date()), Day(startedAt: Date.now)]
+        let previousStreakCount: Int = Streak(count: 1, lastUpdated: nil).count
         let contentView = ContentView()
         
-        let newDay = contentView.createNewDay(days: days)
+        let newDay = contentView.createNewDay(days: days, previousStreakCount: previousStreakCount)
 
         XCTAssertNil(newDay)
     }
     
     func testNewDayNegative() {
         let days: [Day] = [Day(startedAt: Calendar.current.date(byAdding: .day, value: -1, to: Date()) ?? Date())]
+        let previousStreakCount: Int = Streak(count: 0, lastUpdated: nil).count
         let contentView = ContentView()
         
-        let newDay = contentView.createNewDay(days: days)
+        let newDay = contentView.createNewDay(days: days, previousStreakCount: previousStreakCount)
 
         XCTAssertEqual(newDay?.day.startedAt.formatted(date: .abbreviated, time: .omitted), Date().formatted(date: .abbreviated, time: .omitted))
         XCTAssertEqual(newDay?.streak.addedAt.formatted(date: .abbreviated, time: .omitted), Date().formatted(date: .abbreviated, time: .omitted))
