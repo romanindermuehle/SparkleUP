@@ -19,7 +19,7 @@ struct SparkleUPApp: App {
         WindowGroup {
             if isOnboarding {
                 ContentView()
-                    .onAppear {
+                    .task {
                         showOnboarding = true
                     }
                     .fullScreenCover(isPresented: $showOnboarding) {
@@ -34,6 +34,6 @@ struct SparkleUPApp: App {
                     }
             }
         }
-        .modelContainer(for: [Gratitude.self, Day.self, Mood.self, Quote.self])
+        .modelContainer(for: [Gratitude.self, Day.self, Mood.self, Quote.self, Streak.self, User.self])
     }
 }

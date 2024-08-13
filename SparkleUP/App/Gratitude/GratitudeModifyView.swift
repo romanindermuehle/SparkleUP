@@ -11,6 +11,7 @@ import TipKit
 
 struct GratitudeModifyView: View {
     @Query(sort: \Day.startedAt) var days: [Day]
+    @Query(sort: \Streak.addedAt) var streaks: [Streak]
     @Binding var gratitude: Gratitude?
     @Environment(\.modelContext) var context
     @Environment(\.dismiss) var dismiss
@@ -18,66 +19,44 @@ struct GratitudeModifyView: View {
     @State var gratitudeValue1: String
     @State var gratitudeValue2: String
     @State var gratitudeValue3: String
-    @State var recordedInSequence: Double
     
     var isEditing: Bool
-    var minimum = 0.0
-    var maximum = 90.0
-    
-    
-    
-    var gratitudeTip = GratitudeTip()
     
     var body: some View {
         Form {
-            if recordedInSequence <= 90 {
-                Section {
-                    VStack(alignment: .center) {
-                        Text("Number of days of your gratitude")
-                            .font(.headline)
-                            .fontWeight(.medium)
-                        
-                        Gauge(value: recordedInSequence, in: minimum...maximum) {
-                            Image(systemName: "percent")
-                        } currentValueLabel: {
-                            Text("\(recordedInSequence, specifier: "%.0f")")
-                        } minimumValueLabel: {
-                            Text("0")
-                        } maximumValueLabel: {
-                            Text("90")
-                        }
-                        .gaugeStyle(.accessoryCircular)
-                        .tint(Gradient(colors: [.lightMagenta, .darkMagenta]))
-                    }
-                    .popoverTip(gratitudeTip)
-                    .frame(maxWidth: .infinity, alignment: .center)
-                }
-            }
-            
             TextField("I'm grateful for...", text: $gratitudeValue1)
                 .disabled(isEditing)
             HStack {
-                if recordedInSequence >= 30 {
-                    TextField("I'm grateful for...", text: $gratitudeValue2)
-                } else {
-                    Image(systemName: "lock.badge.clock.fill")
-                        .foregroundStyle(.accent)
-                    TextField("Will unlock after 30 days", text: $gratitudeValue2)
-                        .disabled(true || isEditing)
+                if let streakCount = streaks.last?.count {
+                    if streakCount >= 30 {
+                        TextField("I'm grateful for...", text: $gratitudeValue2)
+                    } else {
+                        Image(systemName: "lock.badge.clock.fill")
+                            .foregroundStyle(.accent)
+                        TextField("Will unlock after \(30 - streakCount) days", text: $gratitudeValue2)
+                            .disabled(true || isEditing)
+                    }
                 }
             }
             HStack {
-                if recordedInSequence >= 90 {
-                    TextField("I'm grateful for...", text: $gratitudeValue3)
-                } else {
-                    Image(systemName: "lock.badge.clock.fill")
-                        .foregroundStyle(.accent)
-                    TextField("Will unlock after 90 days", text: $gratitudeValue3)
-                        .disabled(true || isEditing)
+                if let streakCount = streaks.last?.count {
+                    if  streakCount >= 90 {
+                        TextField("I'm grateful for...", text: $gratitudeValue3)
+                    } else {
+                        Image(systemName: "lock.badge.clock.fill")
+                            .foregroundStyle(.accent)
+                        TextField("Will unlock after \(90 - streakCount) days", text: $gratitudeValue3)
+                            .disabled(true || isEditing)
+                    }
                 }
             }
         }
         .toolbar {
+            ToolbarItem(placement: .principal) {
+                Text("What are you grateful for today?")
+                    .font(.headline)
+                    .fixedSize(horizontal: true, vertical: false)
+            }
             ToolbarItem(placement: .topBarTrailing) {
                 Button("Save") {
                     saveGratitude()
@@ -86,7 +65,6 @@ struct GratitudeModifyView: View {
                 .fontWeight(.bold)
             }
         }
-        .navigationTitle("What are you grateful for today?")
         .navigationBarTitleDisplayMode(.inline)
     }
     
@@ -95,34 +73,13 @@ struct GratitudeModifyView: View {
             gratitude?.gratitudeValue1 = gratitudeValue1
             gratitude?.gratitudeValue2 = gratitudeValue2
             gratitude?.gratitudeValue3 = gratitudeValue3
-            gratitude?.recordedInSequence = recordedInSequence
         } else {
-            let newSequenceNumber = checkSequence(days: days, recordedInSequence: recordedInSequence)
-            recordedInSequence += newSequenceNumber
             
-            let new = Gratitude(gratitudeValue1: gratitudeValue1, gratitudeValue2: gratitudeValue2, gratitudeValue3: gratitudeValue3, recordedInSequence: recordedInSequence)
+            let new = Gratitude(gratitudeValue1: gratitudeValue1, gratitudeValue2: gratitudeValue2, gratitudeValue3: gratitudeValue3)
             context.insert(new)
         }
         markGratitudeDone()
         dismiss()
-    }
-    
-    func checkSequence(days: [Day], recordedInSequence: Double) -> Double {
-        let filteredDaysTaskDone = days.filter { $0.tasksDone.contains(where: { $0 == "gratitudeDone" }) }.sorted(by: { $0.startedAt < $1.startedAt })
-        let lastTwoDays = filteredDaysTaskDone.suffix(2)
-        
-        guard let fromDate  = lastTwoDays.first?.startedAt else { return 0.0 }
-        guard let toDate  = lastTwoDays.last?.startedAt else { return 0.0 }
-        let isNotToday = !Calendar.current.isDateInToday(toDate)
-        
-        if let dayDifference = calculateDayDifference(fromDate: fromDate, toDate: toDate) {
-            if dayDifference < 2 && isNotToday {
-                return 1.0
-            } else if recordedInSequence < 1 {
-                return 1.0
-            }
-        }
-        return 0.0
     }
     
     func markGratitudeDone() {
@@ -139,10 +96,6 @@ struct GratitudeModifyView: View {
                 
             }
         }
-    }
-    
-    func calculateDayDifference(fromDate: Date, toDate: Date) -> Int? {
-        Calendar.current.dateComponents([.day], from: fromDate, to: toDate).day
     }
 }
 

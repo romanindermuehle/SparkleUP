@@ -46,7 +46,7 @@ struct SparkleRing: View {
                 .padding()
                 .foregroundStyle(Color.lightMagenta)
             }
-            .onAppear {
+            .task {
                 DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(8)) {
                     dismiss()
                 }

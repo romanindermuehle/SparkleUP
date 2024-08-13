@@ -15,7 +15,7 @@ struct RingTip: Tip {
     }
     
     var message: Text? {
-        Text("Set your daily mood, write down what you're grateful for, and read the daily quote to make the ring sparkle.")
+        Text("Set your mood, express gratitude, read your quote – watch your ring sparkle!")
     }
     
     var image: Image? {
