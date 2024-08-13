@@ -64,7 +64,7 @@ final class ProgressViewTests: XCTestCase {
         
         let getShortWeekdaySymbols = calenderView.getShortWeekdaySymbols().map { $0.1 }
         
-        XCTAssertEqual(getShortWeekdaySymbols, ["M", "T", "W", "T", "F", "S", "S"])
+        XCTAssertEqual(getShortWeekdaySymbols, ["S", "M", "T", "W", "T", "F", "S"])
     }
     
     func testGetDatesForFebruary() {
@@ -76,7 +76,7 @@ final class ProgressViewTests: XCTestCase {
         let getDatesForCurrentMonth = calenderView.getDatesForCurrentMonth(currentDate: februaryDate)
         
         // February has only 29 days and the month started on Thursday. So for the UI we need to fill the empty space. In this case 3 days. They are called leadingDays.
-        XCTAssertEqual(getDatesForCurrentMonth.count, 32)
+        XCTAssertEqual(getDatesForCurrentMonth.count, 33)
         
         
     }
@@ -89,7 +89,7 @@ final class ProgressViewTests: XCTestCase {
         
         let getDatesForCurrentMonth = calenderView.getDatesForCurrentMonth(currentDate: julyDate)
         
-        XCTAssertEqual(getDatesForCurrentMonth.count, 31)
+        XCTAssertEqual(getDatesForCurrentMonth.count, 32)
         
         
     }
@@ -103,7 +103,7 @@ final class ProgressViewTests: XCTestCase {
         let getDatesForCurrentMonth = calenderView.getDatesForCurrentMonth(currentDate: novemberDate)
         
         // There are 30 days in November and the month starts on Friday. So for the UI we need to fill the empty space. In this case 4 days. They are called leadingDays.
-        XCTAssertEqual(getDatesForCurrentMonth.count, 34)
+        XCTAssertEqual(getDatesForCurrentMonth.count, 35)
         
         
     }
