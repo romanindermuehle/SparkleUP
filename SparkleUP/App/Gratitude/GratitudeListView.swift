@@ -30,7 +30,7 @@ struct GratitudeListView: View {
             } else {
                 List {
                     ForEach(gratitudes, id: \.self) { gratitude in
-                        NavigationLink(value: gratitude) {
+                        NavigationLink(value: GratitudeDestination.detail(gratitude)) {
                             VStack(alignment: .leading) {
                                 Text(gratitude.gratitudeValue1)
                                     .lineLimit(1)
@@ -51,17 +51,18 @@ struct GratitudeListView: View {
             }
         }
         .navigationTitle("Your Gratitudes")
-        .navigationDestination(for: Gratitude.self) { gratitude in
-            GratitudeModifyView(gratitude: .constant(gratitude), gratitudeValue1: gratitude.gratitudeValue1, gratitudeValue2: gratitude.gratitudeValue2, gratitudeValue3: gratitude.gratitudeValue3, isEditing: true)
-            
-        }
-        .navigationDestination(for: Bool.self) { _ in
-            GratitudeModifyView(gratitude: .constant(nil), gratitudeValue1: "", gratitudeValue2: "", gratitudeValue3: "", isEditing: false)
+        .navigationDestination(for: GratitudeDestination.self) { destination in
+            switch destination {
+            case .add:
+                GratitudeAddView(gratitudeValue1: "", gratitudeValue2: "", gratitudeValue3: "")
+            case .detail(let gratitude):
+                GratitudeDetailView(gratitude: gratitude)
+            }
         }
         .toolbar(.hidden, for: .tabBar)
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
-                NavigationLink(value: true) {
+                NavigationLink(value: GratitudeDestination.add) {
                     Image(systemName: "plus")
                 }
             }
