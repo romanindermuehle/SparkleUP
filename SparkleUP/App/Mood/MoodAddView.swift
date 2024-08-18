@@ -9,9 +9,8 @@ import SwiftUI
 import SwiftData
 import TipKit
 
-struct MoodModifyView: View {
+struct MoodAddView: View {
     @Query(sort: \Day.startedAt) var days: [Day]
-    @Binding var mood: Mood?
     @Environment(\.modelContext) var context
     @Environment(\.dismiss) var dismiss
     
@@ -19,22 +18,15 @@ struct MoodModifyView: View {
     
     var getWord = MoodLevel.colorToWord
     var getColor = MoodLevel.valueToColor
-    
     var batteryTip = BatteryTip()
-    var isEditing: Bool
     
     @State private var showFirework: Bool = false
-    
-    @State private var current = 0.0
-    @State private var minimum = 0.0
-    @State private var maximum = 100.0
     
     var body: some View {
         VStack(alignment: .center) {
             Text("\(moodLevel * 100, specifier: "%.0f")%")
                 .font(.system(size: 56, weight: .black))
                 .foregroundStyle(getColor(moodLevel))
-           
             
             MoodBarometer(moodLevel: $moodLevel, levelColor: moodLevel)
                 .frame(width: 250, height: 90)
@@ -50,7 +42,6 @@ struct MoodModifyView: View {
             
             Slider(value: $moodLevel, in: 0...1)
                 .tint(getColor(moodLevel))
-                .disabled(isEditing)
                 .padding()
         }
         .padding()
@@ -61,8 +52,24 @@ struct MoodModifyView: View {
                 } label: {
                     Text("Save")
                 }
-                .disabled(isEditing || moodLevel <= 0.01)
-                .fontWeight(.bold)
+                .disabled(moodLevel <= 0.01)
+                .fontWeight(.semibold)
+            }
+            
+            ToolbarItem(placement: .bottomBar) {
+                Button {
+                    saveMood()
+                } label: {
+                    Text("Save")
+                        .fontWeight(.semibold)
+                        .frame(minWidth: 250, minHeight: 50)
+                        .background(moodLevel <= 0.01 ? Color.gray : Color.accent)
+                        .foregroundStyle(.white)
+                        .clipShape(Capsule())
+                }
+                .disabled(moodLevel <= 0.01)
+                .padding(.bottom)
+                
             }
         }
         .navigationTitle("Choose your Mood Level")
@@ -73,12 +80,9 @@ struct MoodModifyView: View {
     }
     
     func saveMood() {
-        if isEditing {
-            mood?.moodLevel = moodLevel
-        } else {
-            let new = Mood(moodLevel: moodLevel)
-            context.insert(new)
-        }
+        let new = Mood(moodLevel: moodLevel)
+        context.insert(new)
+        
         markMoodDone()
         if moodLevel == 1 {
             showFirework.toggle()

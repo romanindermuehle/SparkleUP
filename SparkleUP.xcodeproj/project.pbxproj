@@ -10,6 +10,7 @@
 		CB37CE462C470CBF00545036 /* ProgressViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB37CE452C470CBF00545036 /* ProgressViewTests.swift */; };
 		CB3B78982BED2127006F3233 /* SparkleRing.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = CB3B78972BED2127006F3233 /* SparkleRing.mp4 */; };
 		CB3B78A22BED655C006F3233 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3B78A12BED655C006F3233 /* SettingsView.swift */; };
+		CB3B882A2C713AD0005EE8C7 /* MoodDestination.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3B88292C713AD0005EE8C7 /* MoodDestination.swift */; };
 		CB3BC91D2C45566E008F7A67 /* Streak.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3BC91C2C45566E008F7A67 /* Streak.swift */; };
 		CB3BC91F2C457817008F7A67 /* DayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3BC91E2C457817008F7A67 /* DayView.swift */; };
 		CB42B4392C68B26D0023B353 /* BackupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB42B4382C68B26D0023B353 /* BackupView.swift */; };
@@ -35,7 +36,7 @@
 		CB6D39382BA7711F0098AE0E /* AppScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6D38FA2BA7711F0098AE0E /* AppScreen.swift */; };
 		CB6D39392BA7711F0098AE0E /* AppTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6D38FB2BA7711F0098AE0E /* AppTabView.swift */; };
 		CB6D393A2BA7711F0098AE0E /* MoodListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6D38FD2BA7711F0098AE0E /* MoodListView.swift */; };
-		CB6D393B2BA7711F0098AE0E /* MoodModifyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6D38FE2BA7711F0098AE0E /* MoodModifyView.swift */; };
+		CB6D393B2BA7711F0098AE0E /* MoodAddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6D38FE2BA7711F0098AE0E /* MoodAddView.swift */; };
 		CB6D393E2BA7711F0098AE0E /* GratitudeListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6D39032BA7711F0098AE0E /* GratitudeListView.swift */; };
 		CB6D393F2BA7711F0098AE0E /* GratitudeAddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6D39042BA7711F0098AE0E /* GratitudeAddView.swift */; };
 		CB6D39402BA7711F0098AE0E /* QuoteSampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6D39062BA7711F0098AE0E /* QuoteSampleData.swift */; };
@@ -93,6 +94,7 @@
 		CB37CE452C470CBF00545036 /* ProgressViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressViewTests.swift; sourceTree = "<group>"; };
 		CB3B78972BED2127006F3233 /* SparkleRing.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = SparkleRing.mp4; sourceTree = "<group>"; };
 		CB3B78A12BED655C006F3233 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		CB3B88292C713AD0005EE8C7 /* MoodDestination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodDestination.swift; sourceTree = "<group>"; };
 		CB3BC91C2C45566E008F7A67 /* Streak.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Streak.swift; sourceTree = "<group>"; };
 		CB3BC91E2C457817008F7A67 /* DayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayView.swift; sourceTree = "<group>"; };
 		CB42B4382C68B26D0023B353 /* BackupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackupView.swift; sourceTree = "<group>"; };
@@ -121,7 +123,7 @@
 		CB6D38FA2BA7711F0098AE0E /* AppScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppScreen.swift; sourceTree = "<group>"; };
 		CB6D38FB2BA7711F0098AE0E /* AppTabView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppTabView.swift; sourceTree = "<group>"; };
 		CB6D38FD2BA7711F0098AE0E /* MoodListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoodListView.swift; sourceTree = "<group>"; };
-		CB6D38FE2BA7711F0098AE0E /* MoodModifyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoodModifyView.swift; sourceTree = "<group>"; };
+		CB6D38FE2BA7711F0098AE0E /* MoodAddView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoodAddView.swift; sourceTree = "<group>"; };
 		CB6D39032BA7711F0098AE0E /* GratitudeListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GratitudeListView.swift; sourceTree = "<group>"; };
 		CB6D39042BA7711F0098AE0E /* GratitudeAddView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GratitudeAddView.swift; sourceTree = "<group>"; };
 		CB6D39062BA7711F0098AE0E /* QuoteSampleData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuoteSampleData.swift; sourceTree = "<group>"; };
@@ -280,7 +282,8 @@
 			isa = PBXGroup;
 			children = (
 				CB6D38FD2BA7711F0098AE0E /* MoodListView.swift */,
-				CB6D38FE2BA7711F0098AE0E /* MoodModifyView.swift */,
+				CB6D38FE2BA7711F0098AE0E /* MoodAddView.swift */,
+				CB3B88292C713AD0005EE8C7 /* MoodDestination.swift */,
 			);
 			path = Mood;
 			sourceTree = "<group>";
@@ -615,7 +618,7 @@
 			files = (
 				CB6D393A2BA7711F0098AE0E /* MoodListView.swift in Sources */,
 				CB63B2BC2C4ACA53004A3585 /* CreateUserView.swift in Sources */,
-				CB6D393B2BA7711F0098AE0E /* MoodModifyView.swift in Sources */,
+				CB6D393B2BA7711F0098AE0E /* MoodAddView.swift in Sources */,
 				CB6D39412BA7711F0098AE0E /* Day.swift in Sources */,
 				CB6D39562BA7711F0098AE0E /* BatteryTip.swift in Sources */,
 				CB42B43B2C68F4930023B353 /* ThirdPartyLicenseUrls.swift in Sources */,
@@ -638,6 +641,7 @@
 				CB51C4312C681D9D00475421 /* AboutTheAppView.swift in Sources */,
 				CBEF38772BE78FE1006AD251 /* Greetings.swift in Sources */,
 				CB51C42D2C67C28300475421 /* Image.swift in Sources */,
+				CB3B882A2C713AD0005EE8C7 /* MoodDestination.swift in Sources */,
 				CB6D38D02BA7706D0098AE0E /* SparkleUPApp.swift in Sources */,
 				CB6D39612BA7711F0098AE0E /* TodayView.swift in Sources */,
 				CB6D395B2BA7711F0098AE0E /* HalfCircleShape.swift in Sources */,
