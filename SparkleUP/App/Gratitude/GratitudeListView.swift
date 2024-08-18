@@ -20,7 +20,7 @@ struct GratitudeListView: View {
                 } description: {
                     Text("You haven't recorded any gratitude yet.")
                 } actions: {
-                    NavigationLink(value: true) {
+                    NavigationLink(value: GratitudeDestination.add) {
                         Text("Add Gratitude")
                             .padding(5)
                             .font(.headline)
