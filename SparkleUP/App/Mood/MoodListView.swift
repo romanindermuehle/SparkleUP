@@ -25,7 +25,7 @@ struct MoodListView: View {
                 } description: {
                     Text("You haven't entered a mood yet.")
                 } actions: {
-                    NavigationLink(value: true) {
+                    NavigationLink(value: MoodDestination.add) {
                         Text("Add Mood")
                             .padding(5)
                             .font(.headline)
@@ -36,24 +36,22 @@ struct MoodListView: View {
             } else {
                 List {
                     ForEach(moods, id: \.self) { mood in
-                        NavigationLink(value: mood) {
-                            HStack {
-                                Gauge(value: mood.moodLevel * 100, in: minimum...maximum) {
-                                    Image(systemName: "percent")
-                                } currentValueLabel: {
-                                    Text("\(mood.moodLevel * 100, specifier: "%.0f")")
-                                }
-                                .gaugeStyle(.accessoryCircular)
-                                .tint(Gradient(colors: [.red, .orange, .yellow, .green]))
-                                
-                                VStack(alignment: .leading) {
-                                    Text("\(getWord(getColor(mood.moodLevel)))")
-                                        .font(.headline)
-                                        .foregroundStyle(getColor(mood.moodLevel))
-                                    Text(mood.addedAt, style: .date)
-                                }
-                                
+                        HStack {
+                            Gauge(value: mood.moodLevel * 100, in: minimum...maximum) {
+                                Image(systemName: "percent")
+                            } currentValueLabel: {
+                                Text("\(mood.moodLevel * 100, specifier: "%.0f")")
                             }
+                            .gaugeStyle(.accessoryCircular)
+                            .tint(Gradient(colors: [.red, .orange, .yellow, .green]))
+                            
+                            VStack(alignment: .leading) {
+                                Text("\(getWord(getColor(mood.moodLevel)))")
+                                    .font(.headline)
+                                    .foregroundStyle(getColor(mood.moodLevel))
+                                Text(mood.addedAt, style: .date)
+                            }
+                            
                         }
                         .swipeActions {
                             Button(role: .destructive) {
@@ -67,16 +65,17 @@ struct MoodListView: View {
             }
         }
         .navigationTitle("Your Moods")
-        .navigationDestination(for: Mood.self) { mood in
-            MoodModifyView(mood: .constant(mood), moodLevel: mood.moodLevel, isEditing: true)
-        }
-        .navigationDestination(for: Bool.self) { _ in
-            MoodModifyView(mood: .constant(nil), moodLevel: 0.0, isEditing: false)
+        .navigationDestination(for: MoodDestination.self) { destination in
+            switch destination {
+            case.add:
+                MoodAddView(moodLevel: 0.0)
+            }
+            
         }
         .toolbar(.hidden, for: .tabBar)
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
-                NavigationLink(value: true) {
+                NavigationLink(value: MoodDestination.add) {
                     Image(systemName: "plus")
                 }
             }
