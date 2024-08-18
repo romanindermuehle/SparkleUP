@@ -99,7 +99,7 @@ struct SettingsView: View {
                     
                     if let appStoreURL {
                         Link(destination: appStoreURL) {
-                            Label("Rate us on the AppStore", systemImage: "star.bubble")
+                            Label("Your positiv review supports us", systemImage: "star.bubble")
                                 .tint(.primary)
                         }
                     }
