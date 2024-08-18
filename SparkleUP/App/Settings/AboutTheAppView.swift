@@ -131,7 +131,7 @@ struct AboutTheAppView: View {
                     .font(.title2)
                     .fontWeight(.bold)
                 
-                Text("Mindset Coach")
+                Text("Mindset Business Expert ")
                     .font(.title3)
                     .fontWeight(.semibold)
                     .foregroundStyle(.secondary)
