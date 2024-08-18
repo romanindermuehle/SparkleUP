@@ -73,6 +73,7 @@ struct GratitudeAddView: View {
                         .clipShape(Capsule())
                 }
                 .disabled(gratitudeValue1.isEmpty)
+                .padding(.bottom)
                
             }
         }
