@@ -20,28 +20,63 @@ struct GratitudeAddView: View {
     
     var body: some View {
         Form {
-            TextField("I'm grateful for...", text: $gratitudeValue1)
-            HStack {
+            Section {
+                ZStack(alignment: .topLeading) {
+                    if gratitudeValue1.isEmpty {
+                        Text("I'm grateful for...")
+                            .foregroundStyle(Color(UIColor.placeholderText))
+                            .padding(.horizontal, 8)
+                            .padding(.vertical, 12)
+                    }
+                    TextEditor(text: $gratitudeValue1)
+                        .padding(4)
+                }
+            }
+            
+            Section {
                 if let streakCount = streaks.last?.count {
                     if streakCount >= 30 {
-                        TextField("I'm grateful for...", text: $gratitudeValue2)
+                        ZStack(alignment: .topLeading) {
+                            if gratitudeValue2.isEmpty {
+                                Text("I'm grateful for...")
+                                    .foregroundStyle(Color(UIColor.placeholderText))
+                                    .padding(.horizontal, 8)
+                                    .padding(.vertical, 12)
+                            }
+                            TextEditor(text: $gratitudeValue2)
+                                .padding(4)
+                        }
                     } else {
-                        Image(systemName: "lock.badge.clock.fill")
-                            .foregroundStyle(.accent)
-                        TextField("Will unlock after \(30 - streakCount) days", text: $gratitudeValue2)
-                            .disabled(streakCount <= 30)
+                        HStack {
+                            Image(systemName: "lock.badge.clock.fill")
+                                .foregroundStyle(.accent)
+                            Text("Will unlock after \(30 - streakCount) days")
+                                .foregroundStyle(Color(UIColor.placeholderText))
+                        }
                     }
                 }
             }
-            HStack {
+            
+            Section {
                 if let streakCount = streaks.last?.count {
                     if  streakCount >= 90 {
-                        TextField("I'm grateful for...", text: $gratitudeValue3)
+                        ZStack(alignment: .topLeading) {
+                            if gratitudeValue3.isEmpty {
+                                Text("I'm grateful for...")
+                                    .foregroundStyle(Color(UIColor.placeholderText))
+                                    .padding(.horizontal, 8)
+                                    .padding(.vertical, 12)
+                            }
+                            TextEditor(text: $gratitudeValue3)
+                                .padding(4)
+                        }
                     } else {
-                        Image(systemName: "lock.badge.clock.fill")
-                            .foregroundStyle(.accent)
-                        TextField("Will unlock after \(90 - streakCount) days", text: $gratitudeValue3)
-                            .disabled(streakCount <= 90)
+                        HStack {
+                            Image(systemName: "lock.badge.clock.fill")
+                                .foregroundStyle(.accent)
+                            Text("Will unlock after \(90 - streakCount) days")
+                                .foregroundStyle(Color(UIColor.placeholderText))
+                        }
                     }
                 }
             }
@@ -59,22 +94,6 @@ struct GratitudeAddView: View {
                 }
                 .disabled(gratitudeValue1.isEmpty)
                 .fontWeight(.semibold)
-            }
-            
-            ToolbarItem(placement: .bottomBar) {
-                Button {
-                    saveGratitude()
-                } label: {
-                    Text("Save")
-                        .fontWeight(.semibold)
-                        .frame(minWidth: 250, minHeight: 50)
-                        .background(gratitudeValue1.isEmpty ? Color.gray : Color.accent)
-                        .foregroundStyle(.white)
-                        .clipShape(Capsule())
-                }
-                .disabled(gratitudeValue1.isEmpty)
-                .padding(.bottom)
-               
             }
         }
         .navigationBarTitleDisplayMode(.inline)
