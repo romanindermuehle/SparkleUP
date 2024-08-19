@@ -7,12 +7,10 @@
 
 import SwiftUI
 import SwiftData
-import TipKit
 
-struct GratitudeModifyView: View {
+struct GratitudeAddView: View {
     @Query(sort: \Day.startedAt) var days: [Day]
     @Query(sort: \Streak.addedAt) var streaks: [Streak]
-    @Binding var gratitude: Gratitude?
     @Environment(\.modelContext) var context
     @Environment(\.dismiss) var dismiss
     
@@ -20,12 +18,9 @@ struct GratitudeModifyView: View {
     @State var gratitudeValue2: String
     @State var gratitudeValue3: String
     
-    var isEditing: Bool
-    
     var body: some View {
         Form {
             TextField("I'm grateful for...", text: $gratitudeValue1)
-                .disabled(isEditing)
             HStack {
                 if let streakCount = streaks.last?.count {
                     if streakCount >= 30 {
@@ -34,7 +29,7 @@ struct GratitudeModifyView: View {
                         Image(systemName: "lock.badge.clock.fill")
                             .foregroundStyle(.accent)
                         TextField("Will unlock after \(30 - streakCount) days", text: $gratitudeValue2)
-                            .disabled(true || isEditing)
+                            .disabled(streakCount <= 30)
                     }
                 }
             }
@@ -46,7 +41,7 @@ struct GratitudeModifyView: View {
                         Image(systemName: "lock.badge.clock.fill")
                             .foregroundStyle(.accent)
                         TextField("Will unlock after \(90 - streakCount) days", text: $gratitudeValue3)
-                            .disabled(true || isEditing)
+                            .disabled(streakCount <= 90)
                     }
                 }
             }
@@ -57,27 +52,38 @@ struct GratitudeModifyView: View {
                     .font(.headline)
                     .fixedSize(horizontal: true, vertical: false)
             }
+            
             ToolbarItem(placement: .topBarTrailing) {
                 Button("Save") {
                     saveGratitude()
                 }
-                .disabled(gratitudeValue1.isEmpty || isEditing)
-                .fontWeight(.bold)
+                .disabled(gratitudeValue1.isEmpty)
+                .fontWeight(.semibold)
+            }
+            
+            ToolbarItem(placement: .bottomBar) {
+                Button {
+                    saveGratitude()
+                } label: {
+                    Text("Save")
+                        .fontWeight(.semibold)
+                        .frame(minWidth: 250, minHeight: 50)
+                        .background(gratitudeValue1.isEmpty ? Color.gray : Color.accent)
+                        .foregroundStyle(.white)
+                        .clipShape(Capsule())
+                }
+                .disabled(gratitudeValue1.isEmpty)
+                .padding(.bottom)
+               
             }
         }
         .navigationBarTitleDisplayMode(.inline)
     }
     
     func saveGratitude() {
-        if isEditing {
-            gratitude?.gratitudeValue1 = gratitudeValue1
-            gratitude?.gratitudeValue2 = gratitudeValue2
-            gratitude?.gratitudeValue3 = gratitudeValue3
-        } else {
-            
-            let new = Gratitude(gratitudeValue1: gratitudeValue1, gratitudeValue2: gratitudeValue2, gratitudeValue3: gratitudeValue3)
-            context.insert(new)
-        }
+        let gratitude = Gratitude(gratitudeValue1: gratitudeValue1, gratitudeValue2: gratitudeValue2, gratitudeValue3: gratitudeValue3)
+        context.insert(gratitude)
+        
         markGratitudeDone()
         dismiss()
     }

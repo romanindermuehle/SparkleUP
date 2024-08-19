@@ -43,7 +43,7 @@ struct TodayView: View {
                     VStack(alignment: .leading) {
                         VStack(alignment: .center) {
                             ProgressRing(day: day, ringSizeHeight: CGFloat((screenHeight ?? 0)), ringSizeWidth: CGFloat(screenWidth ?? 0), ringThickness: 30.0, ringHeight: 30.0, ringWidth: 30.0, fontSize: 58)
-                                .padding(.top, 8)
+                                .padding(.top)
                                 .padding(.bottom, 35)
                             
                             TipView(ringTip, arrowEdge: .top)
@@ -73,8 +73,9 @@ struct TodayView: View {
                             .padding()
                         }
                     }
+                    .padding(.top)
                     .toolbar {
-                        ToolbarItemGroup(placement: .principal) {
+                        ToolbarItemGroup(placement: .topBarLeading) {
                             HStack {
                                 if let profilePhoto = users.first?.image {
                                     Image.init(data: profilePhoto)?
@@ -95,16 +96,14 @@ struct TodayView: View {
                                         .font(.headline)
                                         .multilineTextAlignment(.leading)
                                         .fixedSize(horizontal: false, vertical: true)
-                                        .padding()
+                                        .padding(.leading, 5)
                                 } else {
                                     Text(currentGreeting)
                                         .font(.title3)
                                         .fontWeight(.bold)
                                         .fixedSize(horizontal: false, vertical: true)
-                                        .padding()
+                                        .padding(.leading, 5)
                                 }
-                                
-                                Spacer()
                             }
                         }
                     }
