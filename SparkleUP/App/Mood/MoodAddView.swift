@@ -55,22 +55,6 @@ struct MoodAddView: View {
                 .disabled(moodLevel <= 0.01)
                 .fontWeight(.semibold)
             }
-            
-            ToolbarItem(placement: .bottomBar) {
-                Button {
-                    saveMood()
-                } label: {
-                    Text("Save")
-                        .fontWeight(.semibold)
-                        .frame(minWidth: 250, minHeight: 50)
-                        .background(moodLevel <= 0.01 ? Color.gray : Color.accent)
-                        .foregroundStyle(.white)
-                        .clipShape(Capsule())
-                }
-                .disabled(moodLevel <= 0.01)
-                .padding(.bottom)
-                
-            }
         }
         .navigationTitle("Choose your Mood Level")
         .navigationBarTitleDisplayMode(.inline)
