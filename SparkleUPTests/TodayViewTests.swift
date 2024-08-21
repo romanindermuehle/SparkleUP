@@ -8,14 +8,14 @@
 import XCTest
 @testable import SparkleUP
 
-final class ContentViewTests: XCTestCase {
+final class TodayViewTests: XCTestCase {
 
     func testNewDaySuccessful() {
         let days: [Day] = [Day(startedAt: Calendar.current.date(byAdding: .day, value: -1, to: Date()) ?? Date()), Day(startedAt: Date.now)]
         let previousStreakCount: Int = Streak(count: 1, lastUpdated: nil).count
-        let contentView = ContentView()
+        let todayView = TodayView()
         
-        let newDay = contentView.createNewDay(days: days, previousStreakCount: previousStreakCount)
+        let newDay = todayView.createNewDay(days: days, previousStreakCount: previousStreakCount)
 
         XCTAssertNil(newDay)
     }
@@ -23,9 +23,9 @@ final class ContentViewTests: XCTestCase {
     func testNewDayNegative() {
         let days: [Day] = [Day(startedAt: Calendar.current.date(byAdding: .day, value: -1, to: Date()) ?? Date())]
         let previousStreakCount: Int = Streak(count: 0, lastUpdated: nil).count
-        let contentView = ContentView()
+        let todayView = TodayView()
         
-        let newDay = contentView.createNewDay(days: days, previousStreakCount: previousStreakCount)
+        let newDay = todayView.createNewDay(days: days, previousStreakCount: previousStreakCount)
 
         XCTAssertEqual(newDay?.day.startedAt.formatted(date: .abbreviated, time: .omitted), Date().formatted(date: .abbreviated, time: .omitted))
         XCTAssertEqual(newDay?.streak.addedAt.formatted(date: .abbreviated, time: .omitted), Date().formatted(date: .abbreviated, time: .omitted))

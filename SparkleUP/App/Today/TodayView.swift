@@ -11,6 +11,7 @@ import TipKit
 
 struct TodayView: View {
     @Query(sort: \Day.startedAt) var days: [Day]
+    @Query(sort: \Streak.addedAt) var streaks: [Streak]
     @Query(sort: \User.createdAt) var users: [User]
     @Environment(\.modelContext) var context
     
@@ -108,10 +109,14 @@ struct TodayView: View {
                         }
                     }
                     .task {
-                        
                         if day.percentage >= 1.0 && day.sparkleSeen == false {
                             showSparkle.toggle()
                             day.sparkleSeen = true
+                        }
+                        
+                        if let newDay = createNewDay(days: days, previousStreakCount: streaks.last?.count ?? 0) {
+                            context.insert(newDay.day)
+                            context.insert(newDay.streak)
                         }
                         
                         selectNewGreeting()
@@ -127,6 +132,17 @@ struct TodayView: View {
                 }
             }
         }
+    }
+    
+    func createNewDay(days: [Day], previousStreakCount: Int) -> (day: Day, streak: Streak)? {
+        if !days.contains(where: { $0.startedAt.formatted(date: .abbreviated, time: .omitted) == Date().formatted(date: .abbreviated, time: .omitted) }) {
+            let day = Day.init()
+            let streak = Streak(count: previousStreakCount, lastUpdated: nil)
+            
+            return (day, streak)
+        }
+        
+        return nil
     }
     
     func selectNewGreeting() {
